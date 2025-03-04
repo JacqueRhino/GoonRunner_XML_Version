@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{C0416715-99C3-48FE-8D1F-92A2E58104ED}</ProjectGuid>
+        <OutputType>WinExe</OutputType>
+        <RootNamespace>GoonRunner</RootNamespace>
+        <AssemblyName>GoonRunner</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <WarningLevel>4</WarningLevel>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="SharpVectors.Converters.Wpf, Version=1.8.4.2, Culture=neutral, PublicKeyToken=b532964b8548be77, processorArchitecture=MSIL">
+          <HintPath>..\packages\SharpVectors.1.8.4.2\lib\net47\SharpVectors.Converters.Wpf.dll</HintPath>
+        </Reference>
+        <Reference Include="SharpVectors.Core, Version=1.8.4.2, Culture=neutral, PublicKeyToken=7407205e337c98ef, processorArchitecture=MSIL">
+          <HintPath>..\packages\SharpVectors.1.8.4.2\lib\net47\SharpVectors.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="SharpVectors.Css, Version=1.8.4.2, Culture=neutral, PublicKeyToken=7a46e3f532fdb787, processorArchitecture=MSIL">
+          <HintPath>..\packages\SharpVectors.1.8.4.2\lib\net47\SharpVectors.Css.dll</HintPath>
+        </Reference>
+        <Reference Include="SharpVectors.Dom, Version=1.8.4.2, Culture=neutral, PublicKeyToken=517340b6277b1a7a, processorArchitecture=MSIL">
+          <HintPath>..\packages\SharpVectors.1.8.4.2\lib\net47\SharpVectors.Dom.dll</HintPath>
+        </Reference>
+        <Reference Include="SharpVectors.Model, Version=1.8.4.2, Culture=neutral, PublicKeyToken=2236cfc76b505845, processorArchitecture=MSIL">
+          <HintPath>..\packages\SharpVectors.1.8.4.2\lib\net47\SharpVectors.Model.dll</HintPath>
+        </Reference>
+        <Reference Include="SharpVectors.Rendering.Gdi, Version=1.8.4.2, Culture=neutral, PublicKeyToken=03902092284347e3, processorArchitecture=MSIL">
+          <HintPath>..\packages\SharpVectors.1.8.4.2\lib\net47\SharpVectors.Rendering.Gdi.dll</HintPath>
+        </Reference>
+        <Reference Include="SharpVectors.Rendering.Wpf, Version=1.8.4.2, Culture=neutral, PublicKeyToken=d0902381100df30e, processorArchitecture=MSIL">
+          <HintPath>..\packages\SharpVectors.1.8.4.2\lib\net47\SharpVectors.Rendering.Wpf.dll</HintPath>
+        </Reference>
+        <Reference Include="SharpVectors.Runtime.Wpf, Version=1.8.4.2, Culture=neutral, PublicKeyToken=d16e717f0a981fb9, processorArchitecture=MSIL">
+          <HintPath>..\packages\SharpVectors.1.8.4.2\lib\net47\SharpVectors.Runtime.Wpf.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.Xml"/>
+        <Reference Include="System.Xaml">
+            <RequiredTargetFramework>4.0</RequiredTargetFramework>
+        </Reference>
+        <Reference Include="WindowsBase"/>
+        <Reference Include="PresentationCore"/>
+        <Reference Include="PresentationFramework"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ApplicationDefinition Include="App.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+        </ApplicationDefinition>
+        <Page Include="MainWindow.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <SubType>Designer</SubType>
+        </Page>
+        <Compile Include="App.xaml.cs">
+            <DependentUpon>App.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Core\ObservableObject.cs" />
+        <Compile Include="Core\RelayCommand.cs" />
+        <Compile Include="MainWindow.xaml.cs">
+            <DependentUpon>MainWindow.xaml</DependentUpon>
+            <SubType>Code</SubType>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Properties\AssemblyInfo.cs">
+            <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="Properties\Resources.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
+        <EmbeddedResource Include="Properties\Resources.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="App.config"/>
+        <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Assets\Icon\" />
+      <Folder Include="Assets\Images\" />
+      <Folder Include="Fonts\" />
+      <Folder Include="MVM\Model\" />
+      <Folder Include="MVM\ViewModel\" />
+      <Folder Include="MVM\View\" />
+      <Folder Include="Theme\" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-Bold.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-BoldItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-ExtraBold.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-ExtraBoldItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-ExtraLight.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-ExtraLightItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-Italic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-Light.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-LightItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-Medium.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-MediumItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-Regular.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-SemiBold.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-SemiBoldItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-Thin.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMono-ThinItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-Bold.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-BoldItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-ExtraBold.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-ExtraBoldItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-ExtraLight.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-ExtraLightItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-Italic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-Light.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-LightItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-Medium.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-MediumItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-Regular.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-SemiBold.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-SemiBoldItalic.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-Thin.ttf" />
+      <EmbeddedResource Include="Assets\Fonts\JetBrainsMonoNL-ThinItalic.ttf" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="Assets\Logo\GoonRunner.svg" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+</Project>
