@@ -48,13 +48,13 @@
                    </StackPanel>
                <!-- Horizontal Line -->
                <Rectangle Grid.ColumnSpan="2" Height="2" Width="15" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="#7C6F64"/>
-               <Rectangle Grid.ColumnSpan="2" Height="2" Width="276" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="#7C6F64"/>
+               <Rectangle Grid.ColumnSpan="2" Height="2" Width="305" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="#7C6F64"/>
                <Rectangle Grid.ColumnSpan="2" Height="3" VerticalAlignment="Bottom" Fill="#7C6F64"/> 
                <!-- Vertical Line -->
                <Rectangle Grid.RowSpan="5" Width="2" HorizontalAlignment="Left" Fill="#7C6F64"/>
                <Rectangle Grid.RowSpan="5" Width="2" HorizontalAlignment="Right" Fill="#7C6F64"/>
            </Grid>
-           <TextBlock Text="Đăng Nhập"
+           <TextBlock Text="Log in"
                       FontSize="16"
                       FontFamily="JetBrains Mono"
                       FontWeight="Bold"
