@@ -1,74 +1,70 @@
 ﻿<Window x:Class="GoonRunner.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:s="clr-namespace:SharpVectors.Converters;assembly=SharpVectors.Converters.Wpf"
+        xmlns:svg="clr-namespace:SharpVectors.Converters;assembly=SharpVectors.Converters.Wpf"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:GoonRunner"
         mc:Ignorable="d"
-        Height="720" Width="1280"
+        Height="500" Width="380"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen">
-        <Border Background="#282828"
-                CornerRadius="25">
-           <!--
-               <Grid >
-                   <Grid.ColumnDefinitions>
-                       <ColumnDefinition Width="200"/>
-                       <ColumnDefinition/>
-                   </Grid.ColumnDefinitions>
+    <Grid>
+           <Grid VerticalAlignment="Center"
+                 HorizontalAlignment="Center"
+                 Background="#F9F5D7">
+               
+               <Grid.ColumnDefinitions>
+                   <ColumnDefinition Width="380"/>
+               </Grid.ColumnDefinitions>
+               
+               <Grid.RowDefinitions>
+                   <RowDefinition Height="480"/>
+                   <RowDefinition/>
+               </Grid.RowDefinitions>
+               
+               <Rectangle ></Rectangle>
+               <StackPanel Grid.Row="0" VerticalAlignment="Center"
+                              HorizontalAlignment="Center">
                    
-                  <Grid.RowDefinitions>
-                       <RowDefinition Height="75"/>
-                       <RowDefinition/>
-                  </Grid.RowDefinitions>
-                   
-            <TextBlock Text="Xamlon"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       Foreground="Aqua"
-                       FontSize="22"/>
-               </Grid>
-           -->
-    
-               <Grid VerticalAlignment="Center"
-                     HorizontalAlignment="Center"
-                     Background="#F9F5D7">
-                   
-                   <Grid.ColumnDefinitions>
-                       <ColumnDefinition Width="380"/>
-                   </Grid.ColumnDefinitions>
-                   
-                   <Grid.RowDefinitions>
-                       <RowDefinition Height="480"/>
-                       <RowDefinition/>
-                   </Grid.RowDefinitions>
-                   
-                   <StackPanel Grid.Row="0" VerticalAlignment="Center"
-                                  HorizontalAlignment="Center">
-                       
+                   <Viewbox Stretch="Fill" Width="235" Margin="0,0,0,40">
                        <Image>
                            <Image.Source>
-                               <s:SvgImage Source="./Assets/Logo/GoonRunner.svg" />
+                               <svg:SvgImage Source="./Assets/Logo/GoonRunner.svg" TextAsGeometry="True"/>
                            </Image.Source>
                        </Image>
-                       
-                       <TextBlock Text="Đăng Nhập Tài Khoản"
-                                  Foreground="#7C6F64"
-                                  VerticalAlignment="Center"
-                                  HorizontalAlignment="Center"
-                                  FontFamily="JetBrains Mono"
-                                  FontWeight="Medium"
-                                  FontSize="16"/>
-                       </StackPanel>
+                   </Viewbox>
                    
-                   <!--
-                   <TextBlock Grid.Column="0" Text="Hello youtube"/>
-               -->
-               </Grid>
-           
-        </Border>
+                   <TextBlock Text="Đăng Nhập Tài Khoản"
+                              Foreground="#7C6F64"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"
+                              FontFamily="JetBrains Mono"
+                              FontWeight="Medium"
+                              FontSize="16"/>
+                   
+                   </StackPanel>
+               <!-- Horizontal Line -->
+               <Rectangle Grid.ColumnSpan="2" Height="2" Width="15" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="#7C6F64"/>
+               <Rectangle Grid.ColumnSpan="2" Height="2" Width="276" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="#7C6F64"/>
+               <Rectangle Grid.ColumnSpan="2" Height="3" VerticalAlignment="Bottom" Fill="#7C6F64"/> 
+               <!-- Vertical Line -->
+               <Rectangle Grid.RowSpan="5" Width="2" HorizontalAlignment="Left" Fill="#7C6F64"/>
+               <Rectangle Grid.RowSpan="5" Width="2" HorizontalAlignment="Right" Fill="#7C6F64"/>
+           </Grid>
+           <TextBlock Text="Đăng Nhập"
+                      FontSize="16"
+                      FontFamily="JetBrains Mono"
+                      FontWeight="Bold"
+                      FontStyle="Italic"
+                      Foreground="#7C6F64"
+                      Width="auto"
+                      Height="auto"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      Margin="16,0,0,0"/>
+       
+    </Grid>
 </Window>
