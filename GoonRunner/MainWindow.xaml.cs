@@ -1,4 +1,6 @@
-﻿namespace GoonRunner
+﻿using System.Windows.Input;
+
+namespace GoonRunner
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
