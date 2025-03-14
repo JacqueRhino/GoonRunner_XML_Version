@@ -69,6 +69,7 @@
                    </Grid.ColumnDefinitions>
                    
                
+                <Rectangle Width="auto" Height="auto" PreviewMouseDown="DragMoving" Fill="Transparent"/>
                 
                <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"
                        Content="-"
@@ -105,7 +106,7 @@
                       Foreground="#7C6F64"
                       Width="auto" Height="auto"
                       HorizontalAlignment="Left" VerticalAlignment="Top"
-                      Margin="16,0,0,0"/>
+                      Margin="16,0,0,0" PreviewMouseDown="DragMoving"/>
        
     </Grid>
 </Window>
