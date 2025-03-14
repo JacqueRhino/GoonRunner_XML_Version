@@ -15,8 +15,8 @@
                                          VerticalContentAlignment="Center"
                                          FontFamily="JetBrains Mono"
                                          FontWeight="light"
-                                         Padding="15,5,5,5"
-                                         Foreground="#7C6F64"
+                                         Padding="14,5,5,5"
+                                         Foreground="#A89984"
                                          x:Name="inputBox"/>
                                 
                                 <TextBlock IsHitTestVisible="False"
@@ -27,7 +27,7 @@
                                            FontWeight="Light"
                                            Margin="18,0,0,0"
                                            FontSize="12"
-                                           Foreground="#7C6F64">
+                                           Foreground="#A89984">
                                     
                                     <TextBlock.Style>
                                         <Style TargetType="{x:Type TextBlock}">
@@ -42,8 +42,8 @@
                                     
                                 </TextBlock>
                             
-                               <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="1" Width="15" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="#7C6F64"/>
-                               <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="1" Width="221" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="#7C6F64"/>
+                               <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="1" Width="7" VerticalAlignment="Top" HorizontalAlignment="left" Fill="#7C6F64"/>
+                               <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="1" Width="150" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="#7C6F64"/>
                                <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="1" VerticalAlignment="Bottom" Fill="#7C6F64"/> 
                                <!-- Vertical Line -->
                                <Rectangle Grid.Row="0" Width="1" HorizontalAlignment="Left" Fill="#7C6F64"/>
@@ -53,14 +53,13 @@
                                       FontSize= "12"
                                       FontFamily="JetBrains Mono"
                                       FontWeight="Bold"
-                                      FontStyle="Italic"
                                       Background="#F9F5D7"
                                       Foreground="#7C6F64"
                                       Width="auto"
                                       Height="auto"
                                       HorizontalAlignment="Left"
                                       VerticalAlignment="Top"
-                                      Margin="16,0,0,0"/>
+                                      Margin="10,0,5,0"/>
                         </Grid>
                 </ControlTemplate>
             </Setter.Value>

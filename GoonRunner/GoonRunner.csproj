@@ -91,8 +91,9 @@
         </Compile>
         <Page Include="MVVM\View\LogIn.xaml" />
         <Page Include="Theme\ButtonTheme.xaml" />
-        <Page Include="Theme\CLoseButton.xaml" />
+        <Page Include="Theme\CloseButton.xaml" />
         <Page Include="Theme\GroupBox.xaml" />
+        <Page Include="Theme\MenuButtonTheme.xaml" />
         <Page Include="Theme\MinimizeButton.xaml" />
         <Page Include="Theme\TextboxTheme.xaml" />
     </ItemGroup>
@@ -118,7 +119,6 @@
         <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Assets\Icon\" />
       <Folder Include="Assets\Images\" />
       <Folder Include="MVVM\Model\" />
       <Folder Include="MVVM\ViewModel\" />
@@ -223,6 +223,26 @@
     </ItemGroup>
     <ItemGroup>
       <EmbeddedResource Include="Assets\Logo\GoonRunner.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="Assets\Icon\Home.svg" />
+      <EmbeddedResource Include="Assets\Icon\Employee.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Assets\Icon\Search.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Assets\Icon\Logout.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Assets\Icon\Gears.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="Assets\Icon\Clipboard.svg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
     </ItemGroup>

@@ -1,24 +1,25 @@
 ﻿<Window x:Class="GoonRunner.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:svg="clr-namespace:SharpVectors.Converters;assembly=SharpVectors.Converters.Wpf"
         Height="720" Width="1280" MinHeight="300" MinWidth="600" Background="#282828">
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="20"/> <!--gap-->
             <ColumnDefinition MaxWidth="250" Width="*"/>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="10"/> <!--gap-->
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="20"/> <!--gap-->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/> <!--gap-->
             <RowDefinition Height="50"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/> <!--gap-->
             <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="20"/> <!--gap-->
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Grid.Column="0" ColumnSpan="5">
                <Grid.RowDefinitions>
@@ -32,8 +33,9 @@
                    <ColumnDefinition Width="40"/>
                </Grid.ColumnDefinitions>
                 
+                <Rectangle Width="auto" Height="auto" PreviewMouseLeftButtonDown="DragMoving" Fill="Transparent"/>
             
-               <Button Grid.Column="1" Width="auto" Height="auto"
+               <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"
                        Content="-"
                        Foreground="#7C6F64" Background="Transparent"
                        FontFamily="JetBrains Mono" FontWeight="Medium" FontSize="12"
@@ -41,7 +43,7 @@
                        Cursor="Hand"
                        Click="MinimizedOnClick"
                        Style="{StaticResource MinimizeButton}"
-                       />
+               />
                <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
                        Content="X"
                        Foreground="#7C6F64" Background="Transparent"
@@ -53,8 +55,43 @@
                />
         </Grid>
         
-            <GroupBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Style="{StaticResource GroupBoxGoonRunner}" Header="Nav"/>
-            <GroupBox Grid.Column="1" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Menu"/>
+            <GroupBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Style="{StaticResource GroupBoxGoonRunner}" Header="Nav">
+                <StackPanel Orientation="Horizontal">
+                    
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Grid.Column="1" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Menu">
+                    <StackPanel HorizontalAlignment="Stretch" Margin="0,0,0,0">
+                        <StackPanel.Resources>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Margin" Value="10,10,0,0"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                            </Style>
+                        </StackPanel.Resources>  
+                        <Button Style="{StaticResource MenuButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Stretch="Uniform" Width="25" Height="25">
+                                   <Image.Source>
+                                       <svg:SvgImage Source="Assets/Icon/employee.svg"/>
+                                   </Image.Source>
+                                </Image>
+                                <TextBlock Text="Nhân Viên" FontFamily="JetBrains Mono" FontSize="18" Foreground="#A89984" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </Button>
+                        
+                        <Button Style="{StaticResource MenuButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Stretch="Uniform" Width="25" Height="25">
+                                   <Image.Source>
+                                       <svg:SvgImage Source="Assets/Icon/Clipboard.svg"/>
+                                   </Image.Source>
+                                </Image>
+                                <TextBlock Text="Đơn Hàng" FontFamily="JetBrains Mono" FontSize="18" Foreground="#A89984" Margin="10,0,0,0"/>
+                            </StackPanel>
+                        </Button>
+                        
+                    </StackPanel>
+            </GroupBox>
             <GroupBox Grid.Column="3" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Main"/>
     </Grid>
 </Window>

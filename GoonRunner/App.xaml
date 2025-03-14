@@ -10,7 +10,8 @@
                  <ResourceDictionary Source="Theme/ButtonTheme.xaml"/>
                  <ResourceDictionary Source="Theme/CLoseButton.xaml"/>
                  <ResourceDictionary Source="Theme/MinimizeButton.xaml"/>
-                 <ResourceDictionary Source="THeme/Groupbox.xaml"/>
+                 <ResourceDictionary Source="Theme/Groupbox.xaml"/>
+                 <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
              </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>
     </Application.Resources>

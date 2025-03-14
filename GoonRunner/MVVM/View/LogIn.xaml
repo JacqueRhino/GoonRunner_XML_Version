@@ -69,7 +69,7 @@
                    </Grid.ColumnDefinitions>
                    
                
-                <Rectangle Width="auto" Height="auto" PreviewMouseDown="DragMoving" Fill="Transparent"/>
+                <Rectangle Width="auto" Height="auto" PreviewMouseLeftButtonDown="DragMoving" Fill="Transparent"/>
                 
                <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"
                        Content="-"
@@ -92,8 +92,8 @@
                </Grid>
                
                <!-- Horizontal Line -->
-               <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="17" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="#7C6F64"/>
-               <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="306" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="#7C6F64"/>
+               <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="14" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="#7C6F64"/>
+               <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="304" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="#7C6F64"/>
                <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" VerticalAlignment="Bottom" Fill="#7C6F64"/> 
                <!-- Vertical Line -->
                <Rectangle Grid.Row="0" Grid.RowSpan="5" Width="2" HorizontalAlignment="Left" Fill="#7C6F64"/>
@@ -102,7 +102,7 @@
                
            </Grid>
            <TextBlock Text="Log in"
-                      FontSize="16" FontFamily="JetBrains Mono" FontWeight="Bold" FontStyle="Italic"
+                      FontSize="16" FontFamily="JetBrains Mono" FontWeight="Bold"
                       Foreground="#7C6F64"
                       Width="auto" Height="auto"
                       HorizontalAlignment="Left" VerticalAlignment="Top"
