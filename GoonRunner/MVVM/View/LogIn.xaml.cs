@@ -1,21 +1,17 @@
-using System;
 using System.Windows;
 using System.Windows.Input;
 
 namespace GoonRunner.MVVM.View
 {
-    public partial class LogIn : Window
+    public partial class LogIn 
     {
         public LogIn()
         {
             InitializeComponent();
         }
-        private void DragAndmove(object sender, MouseButtonEventArgs e)
+        private void DragMoving(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
+            DragMove();
         }
 
         private void ClosedOnClick(object sender, RoutedEventArgs e)
@@ -38,7 +34,7 @@ namespace GoonRunner.MVVM.View
             if (AuthenticateSuccessful())
             {
                 MainWindow mainWindow = new MainWindow();
-                App.Current.MainWindow = mainWindow;
+                Application.Current.MainWindow = mainWindow;
                 this.Close();
                 mainWindow.Show();
             }

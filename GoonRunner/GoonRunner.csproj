@@ -92,6 +92,7 @@
         <Page Include="MVVM\View\LogIn.xaml" />
         <Page Include="Theme\ButtonTheme.xaml" />
         <Page Include="Theme\CLoseButton.xaml" />
+        <Page Include="Theme\GroupBox.xaml" />
         <Page Include="Theme\MinimizeButton.xaml" />
         <Page Include="Theme\TextboxTheme.xaml" />
     </ItemGroup>
@@ -119,7 +120,6 @@
     <ItemGroup>
       <Folder Include="Assets\Icon\" />
       <Folder Include="Assets\Images\" />
-      <Folder Include="Core\Fonts\" />
       <Folder Include="MVVM\Model\" />
       <Folder Include="MVVM\ViewModel\" />
     </ItemGroup>

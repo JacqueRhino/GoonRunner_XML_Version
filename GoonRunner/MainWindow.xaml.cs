@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+using System.Windows.Input;
 
 namespace GoonRunner
 {
@@ -10,6 +11,20 @@ namespace GoonRunner
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void ClosedOnClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MinimizedOnClick(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void DragMoving(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

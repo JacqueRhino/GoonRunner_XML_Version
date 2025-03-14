@@ -69,7 +69,8 @@
                    </Grid.ColumnDefinitions>
                    
                
-               <Button Grid.Column="1" Width="auto" Height="auto"
+                
+               <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"
                        Content="-"
                        Foreground="#7C6F64" Background="Transparent"
                        FontFamily="JetBrains Mono" FontWeight="Medium" FontSize="12"
@@ -77,7 +78,7 @@
                        Cursor="Hand"
                        Click="MinimizedOnClick"
                        Style="{StaticResource MinimizeButton}"
-                       />
+               />
                <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
                        Content="X"
                        Foreground="#7C6F64" Background="Transparent"
