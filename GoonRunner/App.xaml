@@ -12,6 +12,7 @@
                  <ResourceDictionary Source="Theme/MinimizeButton.xaml"/>
                  <ResourceDictionary Source="Theme/Groupbox.xaml"/>
                  <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                 <ResourceDictionary Source="Theme/NavButtonTheme.xaml"/>
              </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>
     </Application.Resources>

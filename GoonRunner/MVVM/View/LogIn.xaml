@@ -36,7 +36,7 @@
                    <Viewbox Stretch="Fill" Width="235" Margin="0,0,0,30">
                        <Image>
                            <Image.Source>
-                               <svg:SvgImage Source="../../Assets\Logo\GoonRunner.svg" TextAsGeometry="True"/>
+                               <svg:SvgImage Source="../../Assets\Logo\GoonRunner.svg"/>
                            </Image.Source>
                        </Image>
                    </Viewbox>
