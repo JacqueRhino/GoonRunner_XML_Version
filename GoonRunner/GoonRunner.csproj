@@ -95,6 +95,7 @@
         <Page Include="Theme\GroupBox.xaml" />
         <Page Include="Theme\MenuButtonTheme.xaml" />
         <Page Include="Theme\MinimizeButton.xaml" />
+        <Page Include="Theme\NavButtonTheme.xaml" />
         <Page Include="Theme\TextboxTheme.xaml" />
     </ItemGroup>
     <ItemGroup>
@@ -227,7 +228,9 @@
       </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-      <EmbeddedResource Include="Assets\Icon\Home.svg" />
+      <EmbeddedResource Include="Assets\Icon\Home.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
       <EmbeddedResource Include="Assets\Icon\Employee.svg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
@@ -237,12 +240,14 @@
       <EmbeddedResource Include="Assets\Icon\Logout.svg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
-      <EmbeddedResource Include="Assets\Icon\Gears.svg">
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="Assets\Icon\Clipboard.svg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-      <EmbeddedResource Include="Assets\Icon\Clipboard.svg">
+      <EmbeddedResource Include="Assets\Icon\Gear.svg">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </EmbeddedResource>
     </ItemGroup>

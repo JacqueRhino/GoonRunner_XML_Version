@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/> <!--gap-->
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="20"/> <!--gap-->
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/> <!--gap-->
@@ -58,6 +58,25 @@
             <GroupBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Style="{StaticResource GroupBoxGoonRunner}" Header="Nav">
                 <StackPanel Orientation="Horizontal">
                     
+                    <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
+                        <StackPanel>
+                            <Image Width="30" Height="20">
+                                <Image.Source>
+                                    <svg:SvgImage Source="Assets/Icon/Gear.svg"/>
+                                </Image.Source>
+                            </Image>
+                        </StackPanel>
+                    </Button>
+                    
+                    <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
+                        <StackPanel>
+                            <Image Width="30" Height="20">
+                                <Image.Source>
+                                    <svg:SvgImage Source="Assets/Icon/Home.svg"/>
+                                </Image.Source>
+                            </Image>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </GroupBox>
             <GroupBox Grid.Column="1" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Menu">
@@ -72,7 +91,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <Image Stretch="Uniform" Width="25" Height="25">
                                    <Image.Source>
-                                       <svg:SvgImage Source="Assets/Icon/employee.svg"/>
+                                       <svg:SvgImage Source="Assets/Icon/Employee.svg"/>
                                    </Image.Source>
                                 </Image>
                                 <TextBlock Text="Nhân Viên" FontFamily="JetBrains Mono" FontSize="18" Foreground="#A89984" Margin="10,0,0,0"/>
