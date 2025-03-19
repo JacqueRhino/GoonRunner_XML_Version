@@ -11,7 +11,8 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Icon="/GoonRunner.ico">
     <Grid>
            <Grid VerticalAlignment="Center"
                  HorizontalAlignment="Center"
@@ -36,18 +37,18 @@
                    <Viewbox Stretch="Fill" Width="235" Margin="0,0,0,30">
                        <Image>
                            <Image.Source>
-                               <svg:SvgImage Source="../../Assets\Logo\GoonRunner.svg"/>
+                               <svg:SvgImage Source="../../Assets/Logo/GoonRunner.svg" TextAsGeometry="True"/>
                            </Image.Source>
                        </Image>
                    </Viewbox>
                    <TextBlock Text="Đăng Nhập Tài Khoản"
                               Foreground="#7C6F64"
                               VerticalAlignment="Center" HorizontalAlignment="Center"
-                              FontFamily="JetBrains Mono" FontWeight="Medium" FontSize="16"
+                              FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="16"
                               Margin="0,0,0,30" />
                    <TextBox Name="Username" Margin="0,0,0,15" Style="{StaticResource TaggedTextbox}">Nhập mã id</TextBox>
                    <TextBox Name="Password" Margin="0,0,0,15" Style="{StaticResource TaggedTextbox}">Nhập mật khẩu</TextBox>
-                   <Button FontFamily="JetBrains Mono" FontWeight="Medium" FontSize="20" 
+                   <Button FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="20" 
                            Foreground="#F9F5D7" Background="#076678"
                            Width="221" Height="61"
                            Content="Sign In"

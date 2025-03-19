@@ -51,7 +51,7 @@
                             </Grid>
                            <TextBlock Text="{TemplateBinding Name}"
                                       FontSize= "12"
-                                      FontFamily="JetBrains Mono"
+                                      FontFamily="../Assets/Fonts/#JetBrains Mono"
                                       FontWeight="Bold"
                                       Background="#F9F5D7"
                                       Foreground="#7C6F64"

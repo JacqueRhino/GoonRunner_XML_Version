@@ -31,13 +31,11 @@ namespace GoonRunner.MVVM.View
 
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            if (AuthenticateSuccessful())
-            {
-                MainWindow mainWindow = new MainWindow();
-                Application.Current.MainWindow = mainWindow;
-                this.Close();
-                mainWindow.Show();
-            }
+            if (!AuthenticateSuccessful()) return;
+            var mainWindow = new MainWindow();
+            Application.Current.MainWindow = mainWindow;
+            this.Close();
+            mainWindow.Show();
         }
         
     }
