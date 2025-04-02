@@ -75,21 +75,18 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
-        <Page Include="MainWindow.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </Page>
         <Compile Include="App.xaml.cs">
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="Core\Extensions.cs" />
         <Compile Include="Core\ObservableObject.cs" />
         <Compile Include="Core\RelayCommand.cs" />
-        <Compile Include="MainWindow.xaml.cs">
-            <DependentUpon>MainWindow.xaml</DependentUpon>
-            <SubType>Code</SubType>
-        </Compile>
         <Page Include="MVVM\View\LogIn.xaml" />
+        <Page Include="MVVM\View\MainWindow.xaml">
+          <Generator>MSBuild:Compile</Generator>
+          <SubType>Designer</SubType>
+        </Page>
         <Page Include="Theme\ButtonTheme.xaml" />
         <Page Include="Theme\CloseButton.xaml" />
         <Page Include="Theme\GroupBox.xaml" />
@@ -101,6 +98,10 @@
     <ItemGroup>
         <Compile Include="MVVM\View\LogIn.xaml.cs">
           <DependentUpon>LogIn.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="MVVM\View\MainWindow.xaml.cs">
+          <DependentUpon>MainWindow.xaml</DependentUpon>
+          <SubType>Code</SubType>
         </Compile>
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
@@ -221,6 +222,21 @@
       <Content Include="Assets\Fonts\JetBrainsMonoNL-ThinItalic.ttf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <EmbeddedResource Include="Assets\Icon\Back.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Assets\Icon\Customer.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Assets\Icon\Dashboard.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Assets\Icon\Product.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Assets\Icon\Forward.svg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </EmbeddedResource>
       <Content Include="GoonRunner.ico">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
