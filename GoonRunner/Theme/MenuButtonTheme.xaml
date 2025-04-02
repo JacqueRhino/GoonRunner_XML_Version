@@ -17,7 +17,7 @@
                 <ControlTemplate TargetType="{x:Type RadioButton}">
                         <Border Background="{TemplateBinding Background}" CornerRadius="8" Padding="8">
                             <StackPanel Orientation="Horizontal">
-                                <extensions:SvgViewboxEx Source="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                <extensions:SvgViewboxEx Source="{Binding Path=(extensions:SvgViewboxEx.Source), RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                 <ContentPresenter VerticalAlignment="Center" />
                             </StackPanel>
                         </Border>
