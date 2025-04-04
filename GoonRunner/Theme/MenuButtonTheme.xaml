@@ -8,7 +8,6 @@
         <Setter Property="FontWeight" Value="Medium"/>
         <Setter Property="Margin" Value="8,8,14,0"/>
         <Setter Property="Height" Value="42"/>
-        <Setter Property="Cursor" Value="Hand"/>
         
         
         <Setter Property="Template">
@@ -35,7 +34,6 @@
                         </Trigger>
                         
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Fill" Value="#F9F5D7" TargetName="Rectangle"/>
                             <Setter Property="Background" Value="#02333D"/>
                             <Setter Property="Foreground" Value="#F9F5D7"/>
                         </Trigger>

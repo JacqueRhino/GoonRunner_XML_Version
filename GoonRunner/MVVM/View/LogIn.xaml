@@ -48,7 +48,7 @@
                               Margin="0,0,0,30" />
                    <TextBox Name="Username" Margin="0,0,0,15" Style="{StaticResource TaggedTextbox}">Nhập mã id</TextBox>
                    <TextBox Name="Password" Margin="0,0,0,15" Style="{StaticResource TaggedTextbox}">Nhập mật khẩu</TextBox>
-                   <Button FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium"
+                   <Button FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="300"
                            Foreground="#F9F5D7" Background="#076678"
                            Width="221" Height="61"
                            Content="Sign In"
