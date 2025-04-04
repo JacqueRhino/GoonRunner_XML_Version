@@ -85,7 +85,6 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Compile Include="ControlsDictionary.cs" />
         <Compile Include="Core\ObservableObject.cs" />
         <Compile Include="Core\RelayCommand.cs" />
         <Page Include="MVVM\View\LogIn.xaml" />

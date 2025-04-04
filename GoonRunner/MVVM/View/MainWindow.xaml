@@ -76,14 +76,6 @@
                     
                     <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
                         <StackPanel>
-                            <TextBlock FontFamily="pack://application:,,,/Assets/Fonts/#Segoe Fluent Icons" FontSize="18" Foreground="#7C6F64" Margin="0,0,0,0">
-                                &#57617;
-                            </TextBlock>
-                        </StackPanel>
-                    </Button>
-                    
-                    <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
-                        <StackPanel>
                                 <ui:SymbolIcon Symbol="Settings32" FontSize="24" Foreground="#7C6F64"/>
                         </StackPanel>
                     </Button>
