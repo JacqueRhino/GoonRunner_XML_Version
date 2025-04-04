@@ -21,7 +21,7 @@
                             <RowDefinition Height="6"/>
                         </Grid.RowDefinitions>
                         <Border Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="0.5" CornerRadius="0" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" Grid.Row="1"/>
-                        <Border BorderBrush="#7C6F64" BorderThickness="0.5" CornerRadius="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="1">
+                        <Border Grid.Column="0"   BorderThickness="0.5" CornerRadius="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="1">
                             <Border.OpacityMask>
                                 <MultiBinding ConverterParameter="7" Converter="{StaticResource BorderGapMaskConverter}">
                                     <Binding ElementName="Header" Path="ActualWidth"/>
