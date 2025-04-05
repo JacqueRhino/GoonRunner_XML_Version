@@ -20,8 +20,8 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="6"/>
                         </Grid.RowDefinitions>
-                        <Border Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="0.5" CornerRadius="0" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" Grid.Row="1"/>
-                        <Border Grid.Column="0"   BorderThickness="0.5" CornerRadius="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="1">
+                        <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="1" CornerRadius="0" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" Grid.Row="1"/>
+                        <Border Grid.Column="0"   BorderThickness="1" CornerRadius="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Grid.Row="1">
                             <Border.OpacityMask>
                                 <MultiBinding ConverterParameter="7" Converter="{StaticResource BorderGapMaskConverter}">
                                     <Binding ElementName="Header" Path="ActualWidth"/>
@@ -29,11 +29,11 @@
                                     <Binding Path="ActualHeight" RelativeSource="{RelativeSource Mode=Self}"/>
                                 </MultiBinding>
                             </Border.OpacityMask>
-                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="0">
-                                <Border BorderBrush="#7C6F64" BorderThickness="0.5" CornerRadius="0"/>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="0" x:Name="Border1">
+                                <Border BorderBrush="#7C6F64" BorderThickness="1" CornerRadius="0" x:Name="Border2"/>
                             </Border>
                         </Border>
-                        <Border x:Name="Header" Grid.Column="1" Padding="5,0,5,0" Grid.RowSpan="2" Grid.Row="0">
+                        <Border x:Name="Header" Grid.Column="1" Padding="5,0,0,0" Grid.RowSpan="2" Grid.Row="0">
                             <ContentPresenter ContentSource="Header" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                             <TextBlock.Foreground>#7C6F64</TextBlock.Foreground>
                             <TextBlock.FontFamily>JetBrains Mono</TextBlock.FontFamily>
@@ -43,7 +43,9 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="BorderBrush" Value="#C93F3F"/>
+                            <Setter Property="BorderBrush" Value="#C93F3F" TargetName="Border1"/>
+                            <Setter Property="BorderBrush" Value="#C93F3F" TargetName="Border2"/>
+                            <Setter Property="TextBlock.Foreground" Value="#C93F3F" TargetName="Header"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

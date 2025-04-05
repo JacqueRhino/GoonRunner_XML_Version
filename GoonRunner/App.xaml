@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="pack://application:,,,/Theme/MinimizeButton.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/Groupbox.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Theme/MenuButtonThemeSignOut.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/NavButtonTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/GridSplitterTheme.xaml"/>
              </ResourceDictionary.MergedDictionaries>

@@ -73,6 +73,7 @@
         <Page Include="Theme\GridSplitterTheme.xaml" />
         <Page Include="Theme\GroupBox.xaml" />
         <Page Include="Theme\MenuButtonTheme.xaml" />
+        <Page Include="Theme\MenuButtonThemeSignOut.xaml" />
         <Page Include="Theme\MinimizeButton.xaml" />
         <Page Include="Theme\NavButtonTheme.xaml" />
         <Page Include="Theme\TextboxTheme.xaml" />
