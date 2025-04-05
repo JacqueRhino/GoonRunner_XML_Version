@@ -1,8 +1,6 @@
 ﻿<Window x:Class="GoonRunner.MVVM.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:svg="clr-namespace:SharpVectors.Converters;assembly=SharpVectors.Converters.Wpf"
-        xmlns:extensions="clr-namespace:GoonRunner.Core"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         Height="720" Width="1280" MinHeight="300" MinWidth="600" Background="#F9F5D7"
         Icon="/GoonRunner.ico">
@@ -12,7 +10,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/> <!--gap-->
-            <ColumnDefinition MinWidth="90" Width="0.225*"/>
+            <ColumnDefinition Width="0.225*"/>
             <ColumnDefinition Width="10"/> <!--gap-->
             <ColumnDefinition Width="*" MinWidth="100"/>
             <ColumnDefinition Width="20"/> <!--gap-->

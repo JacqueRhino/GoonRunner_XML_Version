@@ -12,6 +12,9 @@ namespace GoonRunner.MVVM.View
         public MainWindow()
         {
             InitializeComponent();
+            MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+            MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth;
+
         }
         private void ClosedOnClick(object sender, RoutedEventArgs e)
         {
