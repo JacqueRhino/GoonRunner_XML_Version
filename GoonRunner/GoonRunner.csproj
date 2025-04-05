@@ -208,14 +208,12 @@
       <Content Include="Assets\Fonts\Segoe Fluent Icons.ttf">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+      <Resource Include="Assets\Logo\GoonRunner.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
       <Content Include="GoonRunner.ico">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
-    </ItemGroup>
-    <ItemGroup>
-      <EmbeddedResource Include="Assets\Logo\GoonRunner.svg">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </EmbeddedResource>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>
