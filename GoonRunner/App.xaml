@@ -2,7 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-             StartupUri="MVVM/View/LogIn.xaml">
+             StartupUri="MVVM/View/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -16,7 +16,9 @@
                 <ResourceDictionary Source="pack://application:,,,/Theme/MenuButtonThemeSignOut.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/NavButtonTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/GridSplitterTheme.xaml"/>
-             </ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Theme/PasswordBoxTheme.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Resources/MainResource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>
     </Application.Resources>
 </Application>
