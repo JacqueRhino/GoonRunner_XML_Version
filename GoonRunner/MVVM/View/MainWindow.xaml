@@ -88,8 +88,22 @@
                     </Button>
                     </StackPanel>
                     
-                    <StackPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <!-- <TextBlock Grid.Column="2" HorizontalAlignment="Right">Test</TextBlock> -->
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" >
+                        <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
+                            <StackPanel>
+                                    <ui:SymbolIcon Symbol="Alert20" FontSize="24" Foreground="#7C6F64"/>
+                            </StackPanel>
+                        </Button>
+                            
+                        <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
+                            <StackPanel>
+                                    <Ellipse Width="30" Height="30">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="pack://application:,,,/Assets/Images/TestAvatar.jpeg"></ImageBrush>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
                 </Grid>
             </GroupBox>
@@ -156,7 +170,7 @@
                             </RadioButton>
                         </StackPanel>
                     
-                    <Button Grid.Row="1">
+                    <Button Grid.Row="1" Style="{StaticResource SignOutButtonTheme}">
                        <StackPanel Orientation="Horizontal">
                         <ui:SymbolIcon Symbol="SignOut20" FontSize="28"/>
                         <TextBlock FontFamily="pack://application:,,,/Assets/Fonts/#JetBrains Mono" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center">
