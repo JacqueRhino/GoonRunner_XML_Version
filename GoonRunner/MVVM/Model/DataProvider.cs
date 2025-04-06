@@ -1,6 +1,4 @@
-﻿
-
-namespace GoonRunner.MVVM.Model
+﻿namespace GoonRunner.MVVM.Model
 {
     public class DataProvider
     {

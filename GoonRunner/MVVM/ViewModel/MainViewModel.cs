@@ -11,14 +11,14 @@ namespace GoonRunner.MVVM.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
-        public bool isLoaded { get; set; }
+        public bool IsLoaded { get; set; }
         public ICommand LoadedWindowCommand { get; set; }
 
         public MainViewModel()
         {
-            LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) =>
+            LoadedWindowCommand = new RelayCommand<Window>((p) => true, (p) =>
             {
-                isLoaded = true;
+                IsLoaded = true;
                 if (p == null)
                     return;
                 LogIn loginWindow = new LogIn();
@@ -27,7 +27,7 @@ namespace GoonRunner.MVVM.ViewModel
                 if (loginWindow.DataContext == null)
                     return;
                 var loginWM = loginWindow.DataContext as LoginViewModel;
-                if (loginWM.isLogin)
+                if (loginWM.IsLogin)
                     p.Show();
                 else
                     p.Close();

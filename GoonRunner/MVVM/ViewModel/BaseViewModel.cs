@@ -27,7 +27,7 @@ namespace GoonRunner.MVVM.ViewModel
         public RelayCommand(Predicate<T> canExecute, Action<T> execute)
         {
             if (execute == null)
-                throw new ArgumentNullException("Execute");
+                throw new ArgumentNullException("execute");
             _canExecute = canExecute;
             _execute = execute;
         }
@@ -36,7 +36,7 @@ namespace GoonRunner.MVVM.ViewModel
         {
             try
             {
-                return _canExecute == null ? true : _canExecute((T)parameter);
+                return _canExecute == null || _canExecute((T)parameter);
             }
             catch
             {
@@ -51,8 +51,8 @@ namespace GoonRunner.MVVM.ViewModel
 
         public event EventHandler CanExecuteChanged
         {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
+            add => CommandManager.RequerySuggested += value;
+            remove => CommandManager.RequerySuggested -= value;
         }
     }
 }
