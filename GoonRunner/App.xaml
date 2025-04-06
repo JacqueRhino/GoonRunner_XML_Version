@@ -17,6 +17,8 @@
                 <ResourceDictionary Source="pack://application:,,,/Theme/NavButtonTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/GridSplitterTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/PasswordBoxTheme.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Theme/ForgotPasswordTheme.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Theme/ErrorMessageTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Resources/MainResource.xaml"/>
             </ResourceDictionary.MergedDictionaries>
          </ResourceDictionary>

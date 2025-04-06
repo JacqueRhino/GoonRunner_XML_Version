@@ -89,6 +89,14 @@
     </Page>
     <Page Include="Theme\ButtonTheme.xaml" />
     <Page Include="Theme\CloseButton.xaml" />
+    <Page Include="Theme\ErrorMessageTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\ForgotPasswordTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Theme\GridSplitterTheme.xaml" />
     <Page Include="Theme\GroupBox.xaml" />
     <Page Include="Theme\MenuButtonTheme.xaml" />
