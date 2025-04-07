@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Design;
 using System.Windows;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 namespace GoonRunner.MVVM.View
@@ -46,10 +47,16 @@ namespace GoonRunner.MVVM.View
             DragMove();
         }
         
-        public Point GetMousePosition(object sender, MouseButtonEventArgs e)
+        private Point GetMousePosition(object sender, MouseButtonEventArgs e)
         {
             var point = e.GetPosition(this);
             return new Point(point.X, point.Y);
+        }
+        
+        private void SetMenuWidth(object sender, DragDeltaEventArgs e)
+        {
+            if (MainGrid.ColumnDefinitions[1].Width.Value < 205)
+                MainGrid.ColumnDefinitions[1].Width = new GridLength(95);
         }
     }
 }

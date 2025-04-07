@@ -21,10 +21,10 @@
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
-    <Grid>
+    <Grid Name="MainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/> <!--gap-->
-            <ColumnDefinition MinWidth="225" MaxWidth="225"/>
+            <ColumnDefinition Width="0.225*" MaxWidth="250"/>
             <ColumnDefinition Width="10"/> <!--gap-->
             <ColumnDefinition Width="*" MinWidth="100"/>
             <ColumnDefinition Width="20"/> <!--gap-->
@@ -195,6 +195,11 @@
                 </Grid>
                     
             </GroupBox>
+        
+        <GridSplitter Grid.Column="2" Grid.Row="3" Width="2" VerticalAlignment="Stretch" HorizontalAlignment="Left" ResizeBehavior="PreviousAndNext"
+                      Margin="0,40,0,40"
+                      Background="#7C6F64"
+                      DragDelta="SetMenuWidth"/>        
             <GroupBox Grid.Column="3" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Main">
             
         </GroupBox>
