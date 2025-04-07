@@ -196,9 +196,10 @@
                     
             </GroupBox>
         
-        <GridSplitter Grid.Column="2" Grid.Row="3" Width="2" VerticalAlignment="Stretch" HorizontalAlignment="Left" ResizeBehavior="PreviousAndNext"
-                      Margin="0,40,0,40"
-                      Background="#7C6F64"
+        <GridSplitter Grid.Column="2" Grid.Row="3" Style="{StaticResource GridSplitterColumn}"
+                      VerticalAlignment="Stretch" HorizontalAlignment="Left" 
+                      ResizeBehavior="PreviousAndNext" ResizeDirection="Columns"
+                      Margin="-6,20,0,10"
                       DragDelta="SetMenuWidth"/>        
             <GroupBox Grid.Column="3" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Main">
             
