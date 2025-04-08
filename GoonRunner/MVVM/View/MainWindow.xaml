@@ -24,9 +24,11 @@
     <Grid Name="MainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/> <!--gap-->
-            <ColumnDefinition Width="0.225*" MaxWidth="250"/>
+            <ColumnDefinition Width="225" MaxWidth="250"/>
             <ColumnDefinition Width="10"/> <!--gap-->
             <ColumnDefinition Width="*" MinWidth="100"/>
+            <ColumnDefinition Width="10"/> <!--gap-->
+            <ColumnDefinition Width="250" MaxWidth="280"/>
             <ColumnDefinition Width="20"/> <!--gap-->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -36,7 +38,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/> <!--gap-->
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0" ColumnSpan="5">
+        <Grid Grid.Row="0" Grid.Column="0" ColumnSpan="7">
                <Grid.RowDefinitions>
                    <RowDefinition Height="30"/>
                    <RowDefinition/>
@@ -76,7 +78,7 @@
                    X
                </Button>
         </Grid>
-            <GroupBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Style="{StaticResource GroupBoxGoonRunner}" Header="Nav">
+            <GroupBox Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="1" Style="{StaticResource GroupBoxGoonRunner}" Header="Nav">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -201,6 +203,14 @@
                       DragDelta="SetMenuWidth"/>        
             <GroupBox Grid.Column="3" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Main">
             
-        </GroupBox>
+            </GroupBox>
+        <GridSplitter Grid.Column="4" Grid.Row="3" Style="{StaticResource GridSplitterColumn}"
+                      VerticalAlignment="Stretch" HorizontalAlignment="Left" 
+                      ResizeBehavior="PreviousAndNext" ResizeDirection="Columns"
+                      Margin="-6,20,0,10"
+                      DragDelta="SetSideBarWidth"/>        
+            <GroupBox Grid.Column="5" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Sidebar">
+                
+            </GroupBox>
     </Grid>
 </Window>

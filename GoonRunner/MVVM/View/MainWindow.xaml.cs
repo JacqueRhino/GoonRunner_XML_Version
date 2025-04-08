@@ -58,5 +58,11 @@ namespace GoonRunner.MVVM.View
             if (MainGrid.ColumnDefinitions[1].Width.Value < 205)
                 MainGrid.ColumnDefinitions[1].Width = new GridLength(95);
         }
+        
+        private void SetSideBarWidth(object sender, DragDeltaEventArgs e)
+        {
+            if (MainGrid.ColumnDefinitions[5].Width.Value < 150)
+                MainGrid.ColumnDefinitions[5].Width = new GridLength(0);
+        }
     }
 }

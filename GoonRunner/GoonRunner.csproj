@@ -83,6 +83,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="MVVM\View\SidebarView.xaml" />
     <Page Include="Resources\MainResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,6 +179,9 @@
     <Compile Include="MVVM\View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MVVM\View\SidebarView.xaml.cs">
+      <DependentUpon>SidebarView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
