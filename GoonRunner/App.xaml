@@ -10,7 +10,7 @@
                 <ResourceDictionary Source="pack://application:,,,/Theme/TextboxTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/ButtonTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/CLoseButton.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/Theme/MinimizeButton.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Theme/WindowControlButton.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/Groupbox.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/MenuButtonThemeSignOut.xaml"/>
