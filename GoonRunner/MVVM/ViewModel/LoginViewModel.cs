@@ -5,6 +5,7 @@ using GoonRunner.MVVM.Model;
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
+using GoonRunner.MVVM.View;
 
 namespace GoonRunner.MVVM.ViewModel
 {
@@ -19,12 +20,20 @@ namespace GoonRunner.MVVM.ViewModel
         public string ErrorMassage { get => _errormessage; set { _errormessage = value; OnPropertyChanged(); } }
         public ICommand LoginCommand { get; set; }
         public ICommand PasswordChangedCommand { get; set; }
+        public ICommand ForgotPasswordCommand { get; set; }
 
         public LoginViewModel()
         {
             IsLogin = false;
             LoginCommand = new RelayCommand<Window>((p) => true, Login);
             PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => true, (p) => { Password = p.Password; });
+            ForgotPasswordCommand = new RelayCommand<Window>((p) => true, (p) => 
+            {
+                var forgotPasswordView = new ForgotPasswordView();
+                forgotPasswordView.Show();
+                p.Hide();
+
+            });
         }
 
         private void Login(Window p)
@@ -60,7 +69,6 @@ namespace GoonRunner.MVVM.ViewModel
 
             string passEncode = MD5Hash(Password);
             var accCount = DataProvider.Ins.goonRunnerDB.ACCNHANVIENs.Count(record => record.UserName == UserName && record.Pass == passEncode);
-
 
             if (accCount > 0)
             {

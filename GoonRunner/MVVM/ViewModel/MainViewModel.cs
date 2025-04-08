@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GoonRunner.MVVM.View;
 using System.Windows.Input;
 using System.Windows;
+using Wpf.Ui.Input;
 
 namespace GoonRunner.MVVM.ViewModel
 {
@@ -13,6 +14,7 @@ namespace GoonRunner.MVVM.ViewModel
     {
         public bool IsLoaded { get; set; }
         public ICommand LoadedWindowCommand { get; set; }
+        public ICommand SignOutCommand { get; set; }
 
         public MainViewModel()
         {
@@ -31,6 +33,13 @@ namespace GoonRunner.MVVM.ViewModel
                     p.Show();
                 else
                     p.Close();
+            });
+            SignOutCommand = new RelayCommand<Window>((p) => true, (p) =>
+            {
+                p.Hide();
+                LogIn loginWindow = new LogIn();
+                var loginWM = loginWindow.DataContext as LoginViewModel;
+                loginWindow.Show();
             });
         }
     }

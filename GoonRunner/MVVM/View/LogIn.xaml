@@ -18,57 +18,64 @@
         WindowStartupLocation="CenterScreen"
         Icon="/GoonRunner.ico">
     <Grid>
-           <Grid VerticalAlignment="Center"
+        <Grid VerticalAlignment="Center"
                  HorizontalAlignment="Center"
                  Background="#F9F5D7">
-               
-               <Grid.ColumnDefinitions>
-                   <ColumnDefinition Width="380"/>
-               </Grid.ColumnDefinitions>
-               
-               <Grid.RowDefinitions>
-                   <RowDefinition Height="480"/>
-                   <RowDefinition/>
-                   <RowDefinition/>
-                   <RowDefinition/>
-                   <RowDefinition/>
-               </Grid.RowDefinitions>
-               
-               <Rectangle ></Rectangle>
-               <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"
-                              HorizontalAlignment="Center">
-                   
-                   <Viewbox Width="235" Margin="0,0,0,30">
-                       <Image>
-                           <Image.Source>
-                               <BitmapImage DecodePixelWidth="300" UriSource="pack://application:,,,/Assets/Logo/GoonRunner.png"/>
-                           </Image.Source>
-                       </Image>
-                   </Viewbox>
-                   <TextBlock Text="Đăng Nhập Tài Khoản"
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="380"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="480"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Rectangle ></Rectangle>
+            <StackPanel Grid.Row="0" Grid.Column="0" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+
+                <Viewbox Width="235" Margin="0,0,0,30">
+                    <Image>
+                        <Image.Source>
+                            <BitmapImage DecodePixelWidth="300" UriSource="pack://application:,,,/Assets/Logo/GoonRunner.png"/>
+                        </Image.Source>
+                    </Image>
+                </Viewbox>
+                <TextBlock Text="Đăng Nhập Tài Khoản"
                               Foreground="#7C6F64"
                               VerticalAlignment="Center" HorizontalAlignment="Center"
                               FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="16"
                               Margin="0,0,0,30" />
-                <TextBox Name="Username" 
+                <TextBox Name="UsernameBox" 
                          Margin="0,0,0,15" 
                          Style="{StaticResource TaggedTextbox}"/>
 
                 <PasswordBox Name="PasswordBox"
                              Style="{StaticResource PasswordBoxStyle}"/>
-                   
-                <TextBlock Name="ForgotPassword"
+
+                <TextBlock Name="ForgotPasswordTxt"
                            Text="Quên mật khẩu?"
                            Margin="0,0,7,10"
-                           Style="{StaticResource ForgotPasswordStyle}"/>
+                           Style="{StaticResource ForgotPasswordStyle}">
+                    <TextBlock.InputBindings>
+                        <MouseBinding Command="{Binding ForgotPasswordCommand}" CommandParameter="{Binding ElementName=loginWindow}" MouseAction="LeftClick"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
 
-                <Button FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium"
-                           Foreground="#F9F5D7" Background="#076678"
-                           Width="221" Height="61"
-                           Margin="0,20,0,0"
-                           Style="{StaticResource SigninButton}"
-                           Command="{Binding LoginCommand}"
-                           CommandParameter="{Binding ElementName=loginWindow}">
+                <Button Name="btnLogIn"
+                        FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium"
+                        Foreground="#F9F5D7" Background="#076678"
+                        Width="221" Height="61"
+                        Margin="0,20,0,0"
+                        Style="{StaticResource SigninButton}"
+                        Command="{Binding LoginCommand}"
+                        CommandParameter="{Binding ElementName=loginWindow}"
+                        IsDefault="True">
                     <TextBlock>Đăng nhập</TextBlock>
                 </Button>
 
@@ -80,58 +87,58 @@
                            Style="{StaticResource ErrorMessageStyle}"/>
 
             </StackPanel>
-               
-               <Grid Grid.Row="0">
-                   <Grid.RowDefinitions>
-                       <RowDefinition Height="30"/>
-                       <RowDefinition/>
-                   </Grid.RowDefinitions>
-                   
-                   <Grid.ColumnDefinitions>
-                       <ColumnDefinition/>
-                       <ColumnDefinition Width="40"/>
-                       <ColumnDefinition Width="40"/>
-                   </Grid.ColumnDefinitions>
-                   
-               
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+
+
                 <Rectangle Width="auto" Height="auto" PreviewMouseLeftButtonDown="DragMoving" Fill="Transparent"/>
-                
-               <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"
+
+                <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"
                        Content="-"
                        Foreground="#7C6F64" Background="Transparent"
                        FontFamily="JetBrains Mono" FontWeight="Medium" FontSize="12"
                        BorderThickness="0"
                        Cursor="Hand"
                        Click="MinimizedOnClick"
-                       Style="{StaticResource MinimizeButton}"
-               />
-               <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
+                       Style="{StaticResource MinimizeButton}"/>
+               
+                <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
                        Content="X"
                        Foreground="#7C6F64" Background="Transparent"
                        FontFamily="JetBrains Mono" FontWeight="Medium" FontSize="12"
                        BorderThickness="0"
                        Cursor="Hand"
                        Click="ClosedOnClick"
-                       Style="{StaticResource CloseButton}"
-               />
-               </Grid>
+                       Style="{StaticResource CloseButton}"/>
                
-               <!-- Horizontal Line -->
-               <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="14" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="#7C6F64"/>
-               <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="304" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="#7C6F64"/>
-               <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" VerticalAlignment="Bottom" Fill="#7C6F64"/> 
-               <!-- Vertical Line -->
-               <Rectangle Grid.Row="0" Grid.RowSpan="5" Width="2" HorizontalAlignment="Left" Fill="#7C6F64"/>
-               <Rectangle Grid.Row="0" Grid.RowSpan="5" Width="2" HorizontalAlignment="Right" Fill="#7C6F64"/>
-               
-               
-           </Grid>
-           <TextBlock Text="Log in"
-                      FontSize="16" FontFamily="JetBrains Mono" FontWeight="Bold"
-                      Foreground="#7C6F64"
-                      Width="auto" Height="auto"
-                      HorizontalAlignment="Left" VerticalAlignment="Top"
-                      Margin="16,0,0,0" PreviewMouseDown="DragMoving"/>
-       
+            </Grid>
+
+            <!-- Horizontal Line -->
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="14" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="#7C6F64"/>
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="304" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="#7C6F64"/>
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" VerticalAlignment="Bottom" Fill="#7C6F64"/>
+            <!-- Vertical Line -->
+            <Rectangle Grid.Row="0" Grid.RowSpan="5" Width="2" HorizontalAlignment="Left" Fill="#7C6F64"/>
+            <Rectangle Grid.Row="0" Grid.RowSpan="5" Width="2" HorizontalAlignment="Right" Fill="#7C6F64"/>
+
+
+        </Grid>
+        <TextBlock Text="Log in"
+                   FontSize="16" FontFamily="JetBrains Mono" FontWeight="Bold"
+                   Foreground="#7C6F64"
+                   Width="auto" Height="auto"
+                   HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Margin="16,0,0,0" PreviewMouseDown="DragMoving"/>
+
     </Grid>
 </Window>

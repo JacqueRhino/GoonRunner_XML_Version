@@ -37,6 +37,5 @@ namespace GoonRunner.MVVM.View
             this.Close();
             mainWindow.Show();
         }
-        
     }
 }
