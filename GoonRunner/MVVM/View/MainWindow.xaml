@@ -86,12 +86,12 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     
-                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
-                    <Button Height="auto" Width="auto" Style="{StaticResource NavButton}">
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
+                        
+                    <Button Height="60" Width="auto" Style="{StaticResource NavButton}"
+                            Click="ControlSidebar">
                         <StackPanel>
-                            <TextBlock FontFamily="pack://application:,,,/Assets/Fonts/#Segoe Fluent Icons" FontSize="18" Foreground="#7C6F64" Margin="0,0,0,0">
-                                &#57618;
-                            </TextBlock>
+                                <ui:SymbolIcon Symbol="DualScreenStatusBar24" FontSize="24" Foreground="#7C6F64"/>
                         </StackPanel>
                     </Button>
                     
@@ -100,14 +100,11 @@
                                 <ui:SymbolIcon Symbol="Settings32" FontSize="24" Foreground="#7C6F64"/>
                         </StackPanel>
                     </Button>
+                        
                     </StackPanel>
                     
-                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" >
-                        <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
-                            <StackPanel>
-                                    <ui:SymbolIcon Symbol="Alert20" FontSize="24" Foreground="#7C6F64"/>
-                            </StackPanel>
-                        </Button>
+                    
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
                             
                         <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
                             <StackPanel>
@@ -118,6 +115,13 @@
                                     </Ellipse>
                             </StackPanel>
                         </Button>
+                        
+                        <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
+                            <StackPanel>
+                                    <ui:SymbolIcon Symbol="Alert20" FontSize="24" Foreground="#7C6F64"/>
+                            </StackPanel>
+                        </Button>
+                        
                     </StackPanel>
                 </Grid>
             </GroupBox>
@@ -204,11 +208,12 @@
             <GroupBox Grid.Column="3" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Main">
             
             </GroupBox>
-        <GridSplitter Grid.Column="4" Grid.Row="3" Style="{StaticResource GridSplitterColumn}"
+        <GridSplitter Name="Split2" Grid.Column="4" Grid.Row="3" Style="{StaticResource GridSplitterColumn}"
                       VerticalAlignment="Stretch" HorizontalAlignment="Left" 
                       ResizeBehavior="PreviousAndNext" ResizeDirection="Columns"
                       Margin="-6,20,0,10"
-                      DragDelta="SetSideBarWidth"/>        
+                      DragDelta="CheckSidebarWidth"
+                      DragCompleted="SetSidebarWidth"/>
             <GroupBox Grid.Column="5" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Sidebar">
                 
             </GroupBox>

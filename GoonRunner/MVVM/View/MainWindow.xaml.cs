@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Design;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
@@ -59,10 +60,37 @@ namespace GoonRunner.MVVM.View
                 MainGrid.ColumnDefinitions[1].Width = new GridLength(95);
         }
         
-        private void SetSideBarWidth(object sender, DragDeltaEventArgs e)
+        private void ControlSidebar(object sender, RoutedEventArgs e)
+        {
+            if (MainGrid.ColumnDefinitions[5].Width.Value > 0)
+            {
+                Split2.Visibility = Visibility.Collapsed;
+                MainGrid.ColumnDefinitions[5].Width = new GridLength(0);
+                MainGrid.ColumnDefinitions[4].Width = new GridLength(0);
+            }
+            else
+            {
+                Split2.Visibility = Visibility.Visible;
+                MainGrid.ColumnDefinitions[5].Width = new GridLength(250);
+                MainGrid.ColumnDefinitions[4].Width = new GridLength(10);
+            }
+        }
+
+        private void CheckSidebarWidth(object sender, DragDeltaEventArgs e)
         {
             if (MainGrid.ColumnDefinitions[5].Width.Value < 150)
-                MainGrid.ColumnDefinitions[5].Width = new GridLength(0);
+            {
+               Split2.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void SetSidebarWidth(object sender, DragCompletedEventArgs e)
+        {
+            if (Split2.Visibility == Visibility.Collapsed)
+            {
+               MainGrid.ColumnDefinitions[4].Width = new GridLength(0);
+               MainGrid.ColumnDefinitions[5].Width = new GridLength(0);
+            }
         }
     }
 }
