@@ -5,6 +5,7 @@ using GoonRunner.MVVM.Model;
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
+using GoonRunner.MVVM.View;
 
 namespace GoonRunner.MVVM.ViewModel
 {
@@ -15,14 +16,24 @@ namespace GoonRunner.MVVM.ViewModel
         public string UserName { get => _userName; set { _userName = value; OnPropertyChanged(); } }
         private string _password;
         public string Password { get => _password; set { _password = value; OnPropertyChanged(); } }
+        private string _errormessage;
+        public string ErrorMassage { get => _errormessage; set { _errormessage = value; OnPropertyChanged(); } }
         public ICommand LoginCommand { get; set; }
         public ICommand PasswordChangedCommand { get; set; }
+        public ICommand ForgotPasswordCommand { get; set; }
 
         public LoginViewModel()
         {
             IsLogin = false;
             LoginCommand = new RelayCommand<Window>((p) => true, Login);
             PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => true, (p) => { Password = p.Password; });
+            ForgotPasswordCommand = new RelayCommand<Window>((p) => true, (p) => 
+            {
+                var forgotPasswordView = new ForgotPasswordView();
+                forgotPasswordView.Show();
+                p.Hide();
+
+            });
         }
 
         private void Login(Window p)
@@ -34,43 +45,43 @@ namespace GoonRunner.MVVM.ViewModel
             
             if (string.IsNullOrEmpty(UserName))
             {
-                MessageBox.Show("Xin hãy nhập tên người dùng");
+                ErrorMassage = "Hãy nhập tên người dùng";
                 return;
             }
 
             if (UserName.Length < 3)
             {
-                MessageBox.Show("Tên người dùng phải dài ít nhất là 3 ký tự");
+                ErrorMassage = "Tên người dùng phải dài ít nhất là 3 ký tự";
                 return;
             }
             
             if (string.IsNullOrEmpty(Password))
             {
-                MessageBox.Show("Xin hãy nhập mật khẩu");
+                ErrorMassage = "Hãy nhập mật khẩu";
                 return;
             }
             
             if (Password.Length < 3)
             {
-                MessageBox.Show("Mật khẩu phải dài ít nhất là 3 ký tự");
+                ErrorMassage = "Mật khẩu phải dài ít nhất là 3 ký tự";
                 return;
             }
+
             string passEncode = MD5Hash(Password);
             var accCount = DataProvider.Ins.goonRunnerDB.ACCNHANVIENs.Count(record => record.UserName == UserName && record.Pass == passEncode);
-
 
             if (accCount > 0)
             {
                 IsLogin = true;
-                MessageBox.Show("Bạn đã đăng nhập thành công!");
-                p.Close();
+                p.Hide();
+                MainWindow mainwindow = new MainWindow();
+                mainwindow.Show(); 
             }
             else
             {
-                MessageBox.Show("Username hoặc Password bị sai, vui lòng nhập lại.");
+                ErrorMassage = "Tên người dùng hoặc mật khẩu bị sai, vui lòng nhập lại.";
             }
         }
-
         private static string MD5Hash(string input)
         {
             StringBuilder hash = new StringBuilder();

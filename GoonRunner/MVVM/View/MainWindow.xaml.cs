@@ -20,7 +20,7 @@ namespace GoonRunner.MVVM.View
         }
         private void ClosedOnClick(object sender, RoutedEventArgs e)
         {
-            Close();
+            Application.Current.Shutdown();
         }
 
         private void MaximizeOnClick(object sender, RoutedEventArgs e)

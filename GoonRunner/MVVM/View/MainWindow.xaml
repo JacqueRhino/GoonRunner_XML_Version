@@ -12,12 +12,12 @@
         Name="mainWindow"
         Height="720" Width="1280" MinHeight="500" MinWidth="700" Background="#F9F5D7"
         Icon="/GoonRunner.ico">
-    <i:Interaction.Triggers>
+    <!--<i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 
                                CommandParameter="{Binding ElementName=mainWindow}"/>
         </i:EventTrigger>
-    </i:Interaction.Triggers>
+    </i:Interaction.Triggers>-->
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
@@ -57,14 +57,14 @@
                        FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18"
                        BorderThickness="0"
                        Click="MinimizedOnClick"
-                       Style="{StaticResource WindowsControlButton}"
+                       Style="{StaticResource WindowControlButton}"
                >
                    -   
                </Button>
                 
                <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
                        Click="MaximizeOnClick"
-                       Style="{StaticResource WindowsControlButton}"
+                       Style="{StaticResource WindowControlButton}"
                >
                    <ui:SymbolIcon Symbol="Maximize16"/>
                </Button>
@@ -181,7 +181,7 @@
                                 </RadioButton.Resources>
                             </RadioButton>
                         
-                            <RadioButton>
+                             <RadioButton>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="People20" FontSize="28"/>
                                     <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
@@ -215,10 +215,15 @@
                             </RadioButton>
                         </StackPanel>
                     
-                    <Button Grid.Row="1" Style="{StaticResource SignOutButtonTheme}">
+                    <Button Grid.Row="1"
+                            Style="{StaticResource SignOutButtonTheme}"
+                            Command="{Binding SignOutCommand}"
+                            CommandParameter="{Binding ElementName=mainWindow}">
                        <StackPanel Orientation="Horizontal">
                         <ui:SymbolIcon Symbol="SignOut20" FontSize="28"/>
-                        <TextBlock FontFamily="pack://application:,,,/Assets/Fonts/#JetBrains Mono" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center">
+                        <TextBlock FontFamily="pack://application:,,,/Assets/Fonts/#JetBrains Mono" 
+                                   FontSize="18" Margin="10,0,0,0" 
+                                   VerticalAlignment="Center">
                             Đăng xuất
                         </TextBlock>
                        </StackPanel>

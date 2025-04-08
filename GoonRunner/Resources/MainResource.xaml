@@ -3,4 +3,5 @@
                     xmlns:viewmodel="clr-namespace:GoonRunner.MVVM.ViewModel">
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
+    <viewmodel:ForgotPasswordViewModel x:Key="ForgotPassVM"></viewmodel:ForgotPasswordViewModel>
 </ResourceDictionary>

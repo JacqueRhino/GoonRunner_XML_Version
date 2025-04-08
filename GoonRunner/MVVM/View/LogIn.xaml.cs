@@ -16,7 +16,7 @@ namespace GoonRunner.MVVM.View
 
         private void ClosedOnClick(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
         private void MinimizedOnClick(object sender, RoutedEventArgs e)
@@ -37,6 +37,5 @@ namespace GoonRunner.MVVM.View
             this.Close();
             mainWindow.Show();
         }
-        
     }
 }
