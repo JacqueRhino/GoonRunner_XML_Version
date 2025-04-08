@@ -56,6 +56,7 @@
                          Style="{StaticResource TaggedTextbox}"/>
 
                 <PasswordBox Name="PasswordBox"
+                             Margin="0,0,0,15" 
                              Style="{StaticResource PasswordBoxStyle}"/>
 
                 <TextBlock Name="ForgotPasswordTxt"
@@ -103,24 +104,27 @@
 
                 <Rectangle Width="auto" Height="auto" PreviewMouseLeftButtonDown="DragMoving" Fill="Transparent"/>
 
-                <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"
-                       Content="-"
+                <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"                       
                        Foreground="#7C6F64" Background="Transparent"
                        FontFamily="JetBrains Mono" FontWeight="Medium" FontSize="12"
                        BorderThickness="0"
                        Cursor="Hand"
                        Click="MinimizedOnClick"
-                       Style="{StaticResource WindowsControllButton}"/>
-               
+                       Style="{StaticResource WindowControlButton}">
+                    -
+               </Button>
+               <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
+                       Style="{StaticResource WindowControlButton}"/>
+
                 <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
-                       Content="X"
                        Foreground="#7C6F64" Background="Transparent"
                        FontFamily="JetBrains Mono" FontWeight="Medium" FontSize="12"
                        BorderThickness="0"
                        Cursor="Hand"
                        Click="ClosedOnClick"
-                       Style="{StaticResource CloseButton}"/>
-               
+                       Style="{StaticResource CloseButton}">
+                    X
+                </Button>
             </Grid>
 
             <!-- Horizontal Line -->

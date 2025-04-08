@@ -73,7 +73,6 @@ namespace GoonRunner.MVVM.ViewModel
             if (accCount > 0)
             {
                 IsLogin = true;
-                MessageBox.Show("Bạn đã đăng nhập thành công!");
                 p.Hide();
                 MainWindow mainwindow = new MainWindow();
                 mainwindow.Show(); 
