@@ -74,7 +74,9 @@ namespace GoonRunner.MVVM.ViewModel
             {
                 IsLogin = true;
                 MessageBox.Show("Bạn đã đăng nhập thành công!");
-                p.Close();
+                p.Hide();
+                MainWindow mainwindow = new MainWindow();
+                mainwindow.Show(); 
             }
             else
             {

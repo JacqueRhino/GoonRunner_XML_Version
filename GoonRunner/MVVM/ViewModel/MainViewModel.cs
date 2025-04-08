@@ -18,27 +18,30 @@ namespace GoonRunner.MVVM.ViewModel
 
         public MainViewModel()
         {
-            LoadedWindowCommand = new RelayCommand<Window>((p) => true, (p) =>
-            {
-                IsLoaded = true;
-                if (p == null)
-                    return;
-                LogIn loginWindow = new LogIn();
-                loginWindow.ShowDialog();
+            //LoadedWindowCommand = new RelayCommand<Window>((p) => true, (p) =>
+            //{
+            //    IsLoaded = true;
+            //    if (p == null)
+            //        return;
+            //    LogIn loginWindow = new LogIn();
+            //    loginWindow.ShowDialog();
 
-                if (loginWindow.DataContext == null)
-                    return;
-                var loginWM = loginWindow.DataContext as LoginViewModel;
-                if (loginWM.IsLogin)
-                    p.Show();
-                else
-                    p.Close();
-            });
+            //    if (loginWindow.DataContext == null)
+            //        return;
+            //    var loginWM = loginWindow.DataContext as LoginViewModel;
+            //    if (loginWM.IsLogin)
+            //        p.Show();
+            //    else
+            //        p.Close();
+            //});
             SignOutCommand = new RelayCommand<Window>((p) => true, (p) =>
             {
                 p.Hide();
                 LogIn loginWindow = new LogIn();
                 var loginWM = loginWindow.DataContext as LoginViewModel;
+                loginWM.UserName = "";
+                loginWM.Password = "";
+                loginWM.ErrorMassage = "";
                 loginWindow.Show();
             });
         }

@@ -12,12 +12,12 @@
         Name="mainWindow"
         Height="720" Width="1280" MinHeight="500" MinWidth="700" Background="#F9F5D7"
         Icon="/GoonRunner.ico">
-    <i:Interaction.Triggers>
+    <!--<i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 
                                CommandParameter="{Binding ElementName=mainWindow}"/>
         </i:EventTrigger>
-    </i:Interaction.Triggers>
+    </i:Interaction.Triggers>-->
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
