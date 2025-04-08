@@ -10,7 +10,7 @@
         d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         DataContext="{StaticResource MainVM}"
         Name="mainWindow"
-        Height="720" Width="1280" MinHeight="300" MinWidth="600" Background="#F9F5D7"
+        Height="720" Width="1280" MinHeight="500" MinWidth="700" Background="#F9F5D7"
         Icon="/GoonRunner.ico">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -21,12 +21,14 @@
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
-    <Grid>
+    <Grid Name="MainGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/> <!--gap-->
-            <ColumnDefinition MinWidth="225" MaxWidth="225"/>
+            <ColumnDefinition Width="225" MaxWidth="250"/>
             <ColumnDefinition Width="10"/> <!--gap-->
             <ColumnDefinition Width="*" MinWidth="100"/>
+            <ColumnDefinition Width="10"/> <!--gap-->
+            <ColumnDefinition Width="250" MaxWidth="280"/>
             <ColumnDefinition Width="20"/> <!--gap-->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -36,7 +38,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/> <!--gap-->
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0" ColumnSpan="5">
+        <Grid Grid.Row="0" Grid.Column="0" ColumnSpan="7">
                <Grid.RowDefinitions>
                    <RowDefinition Height="30"/>
                    <RowDefinition/>
@@ -52,21 +54,19 @@
                 <Rectangle Width="auto" Height="auto" PreviewMouseLeftButtonDown="DragMoving" Fill="Transparent"/>
             
                <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"
-                       Foreground="#7C6F64" Background="Transparent"
-                       FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="12"
+                       FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18"
                        BorderThickness="0"
                        Click="MinimizedOnClick"
-                       Style="{StaticResource MinimizeButton}"
+                       Style="{StaticResource WindowsControllButton}"
                >
                    -   
                </Button>
                 
                <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
-                       Foreground="#7C6F64" Background="Transparent"
                        Click="MaximizeOnClick"
-                       Style="{StaticResource MinimizeButton}"
+                       Style="{StaticResource WindowsControllButton}"
                >
-                   <ui:SymbolIcon Symbol="Maximize16" Foreground="#7C6F64"/>
+                   <ui:SymbolIcon Symbol="Maximize16"/>
                </Button>
                <Button Grid.Row="0" Grid.Column="3" Width="auto" Height="auto"
                        Foreground="#7C6F64" Background="Transparent"
@@ -78,7 +78,7 @@
                    X
                </Button>
         </Grid>
-            <GroupBox Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Style="{StaticResource GroupBoxGoonRunner}" Header="Nav">
+            <GroupBox Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="1" Style="{StaticResource GroupBoxGoonRunner}" Header="Nav">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -86,12 +86,12 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     
-                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
-                    <Button Height="auto" Width="auto" Style="{StaticResource NavButton}">
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
+                        
+                    <Button Height="60" Width="auto" Style="{StaticResource NavButton}"
+                            Click="ControlSidebar">
                         <StackPanel>
-                            <TextBlock FontFamily="pack://application:,,,/Assets/Fonts/#Segoe Fluent Icons" FontSize="18" Foreground="#7C6F64" Margin="0,0,0,0">
-                                &#57618;
-                            </TextBlock>
+                                <ui:SymbolIcon Symbol="DualScreenStatusBar24" FontSize="24" Foreground="#7C6F64"/>
                         </StackPanel>
                     </Button>
                     
@@ -100,14 +100,11 @@
                                 <ui:SymbolIcon Symbol="Settings32" FontSize="24" Foreground="#7C6F64"/>
                         </StackPanel>
                     </Button>
+                        
                     </StackPanel>
                     
-                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" >
-                        <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
-                            <StackPanel>
-                                    <ui:SymbolIcon Symbol="Alert20" FontSize="24" Foreground="#7C6F64"/>
-                            </StackPanel>
-                        </Button>
+                    
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
                             
                         <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
                             <StackPanel>
@@ -118,6 +115,13 @@
                                     </Ellipse>
                             </StackPanel>
                         </Button>
+                        
+                        <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
+                            <StackPanel>
+                                    <ui:SymbolIcon Symbol="Alert20" FontSize="24" Foreground="#7C6F64"/>
+                            </StackPanel>
+                        </Button>
+                        
                     </StackPanel>
                 </Grid>
             </GroupBox>
@@ -200,8 +204,23 @@
                 </Grid>
                     
             </GroupBox>
+        
+        <GridSplitter Grid.Column="2" Grid.Row="3" Style="{StaticResource GridSplitterColumn}"
+                      VerticalAlignment="Stretch" HorizontalAlignment="Left" 
+                      ResizeBehavior="PreviousAndNext" ResizeDirection="Columns"
+                      Margin="-6,20,0,10"
+                      DragDelta="SetMenuWidth"/>        
             <GroupBox Grid.Column="3" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Main">
             
-        </GroupBox>
+            </GroupBox>
+        <GridSplitter Name="Split2" Grid.Column="4" Grid.Row="3" Style="{StaticResource GridSplitterColumn}"
+                      VerticalAlignment="Stretch" HorizontalAlignment="Left" 
+                      ResizeBehavior="PreviousAndNext" ResizeDirection="Columns"
+                      Margin="-6,20,0,10"
+                      DragDelta="CheckSidebarWidth"
+                      DragCompleted="SetSidebarWidth"/>
+            <GroupBox Grid.Column="5" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Sidebar">
+                
+            </GroupBox>
     </Grid>
 </Window>
