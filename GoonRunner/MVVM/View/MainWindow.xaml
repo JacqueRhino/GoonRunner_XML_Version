@@ -127,12 +127,6 @@
                                        FontFamily="#JetBrains Mono"/>
                         </StackPanel>
                         
-                        <Button Height="60" Width="auto" Style="{StaticResource NavButton}">
-                            <StackPanel>
-                                    <ui:SymbolIcon Symbol="Alert20" FontSize="24" Foreground="#7C6F64"/>
-                            </StackPanel>
-                        </Button>
-                        
                     </StackPanel>
                 </Grid>
             </GroupBox>
@@ -192,6 +186,28 @@
                                     <ui:SymbolIcon Symbol="People20" FontSize="28"/>
                                     <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
                                         Khách Hàng
+                                    </TextBlock>
+                                </StackPanel>
+                                <RadioButton.Resources>
+                                </RadioButton.Resources>
+                            </RadioButton>
+                        
+                            <RadioButton>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <ui:SymbolIcon Symbol="Tag20" FontSize="28"/>
+                                    <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
+                                        Khuyến Mại
+                                    </TextBlock>
+                                </StackPanel>
+                                <RadioButton.Resources>
+                                </RadioButton.Resources>
+                            </RadioButton>
+                        
+                            <RadioButton>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <ui:SymbolIcon Symbol="Wrench20" FontSize="28"/>
+                                    <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
+                                        Bảo hành
                                     </TextBlock>
                                 </StackPanel>
                                 <RadioButton.Resources>
