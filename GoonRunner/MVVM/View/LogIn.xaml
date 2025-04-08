@@ -84,14 +84,14 @@
                 <Rectangle Width="auto" Height="auto" PreviewMouseLeftButtonDown="DragMoving" Fill="Transparent"/>
                 
                <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"
-                       Content="-"
-                       Foreground="#7C6F64" Background="Transparent"
                        FontFamily="JetBrains Mono" FontWeight="Medium" FontSize="12"
                        BorderThickness="0"
                        Cursor="Hand"
                        Click="MinimizedOnClick"
-                       Style="{StaticResource MinimizeButton}"
-               />
+                       Style="{StaticResource WindowsControllButton}"
+               >
+                   -
+               </Button>
                <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
                        Content="X"
                        Foreground="#7C6F64" Background="Transparent"

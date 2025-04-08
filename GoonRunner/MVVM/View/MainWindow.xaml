@@ -10,7 +10,7 @@
         d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         DataContext="{StaticResource MainVM}"
         Name="mainWindow"
-        Height="720" Width="1280" MinHeight="300" MinWidth="600" Background="#F9F5D7"
+        Height="720" Width="1280" MinHeight="500" MinWidth="700" Background="#F9F5D7"
         Icon="/GoonRunner.ico">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -52,21 +52,19 @@
                 <Rectangle Width="auto" Height="auto" PreviewMouseLeftButtonDown="DragMoving" Fill="Transparent"/>
             
                <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"
-                       Foreground="#7C6F64" Background="Transparent"
-                       FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="12"
+                       FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18"
                        BorderThickness="0"
                        Click="MinimizedOnClick"
-                       Style="{StaticResource MinimizeButton}"
+                       Style="{StaticResource WindowsControllButton}"
                >
                    -   
                </Button>
                 
                <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
-                       Foreground="#7C6F64" Background="Transparent"
                        Click="MaximizeOnClick"
-                       Style="{StaticResource MinimizeButton}"
+                       Style="{StaticResource WindowsControllButton}"
                >
-                   <ui:SymbolIcon Symbol="Maximize16" Foreground="#7C6F64"/>
+                   <ui:SymbolIcon Symbol="Maximize16"/>
                </Button>
                <Button Grid.Row="0" Grid.Column="3" Width="auto" Height="auto"
                        Foreground="#7C6F64" Background="Transparent"
