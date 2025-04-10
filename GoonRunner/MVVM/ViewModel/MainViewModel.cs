@@ -1,39 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GoonRunner.MVVM.View;
+﻿using GoonRunner.MVVM.View;
 using System.Windows.Input;
 using System.Windows;
-using Wpf.Ui.Input;
+using System.Windows.Controls;
 
 namespace GoonRunner.MVVM.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {
-        public bool IsLoaded { get; set; }
-        public ICommand LoadedWindowCommand { get; set; }
+        public ICommand HomeViewCommand { get; set; }
+        public ICommand NhanVienViewCommand { get; set; }
         public ICommand SignOutCommand { get; set; }
+        public HomeViewModel HomeVM { get; set; }
+        public NhanVienViewModel NhanVienVM { get; set; }
+        private object _currentView;
+
+        public object CurrentView
+        {
+            get { return _currentView; }
+            set
+            {
+                _currentView = value;
+                OnPropertyChanged("CurrentView");
+            }
+        }
 
         public MainViewModel()
         {
-            //LoadedWindowCommand = new RelayCommand<Window>((p) => true, (p) =>
-            //{
-            //    IsLoaded = true;
-            //    if (p == null)
-            //        return;
-            //    LogIn loginWindow = new LogIn();
-            //    loginWindow.ShowDialog();
+            
+            HomeVM = new HomeViewModel();
+            NhanVienVM = new NhanVienViewModel();
+            CurrentView = HomeVM;
 
-            //    if (loginWindow.DataContext == null)
-            //        return;
-            //    var loginWM = loginWindow.DataContext as LoginViewModel;
-            //    if (loginWM.IsLogin)
-            //        p.Show();
-            //    else
-            //        p.Close();
-            //});
+            HomeViewCommand = new Wpf.Ui.Input.RelayCommand<RadioButton>(o =>
+            {
+                CurrentView = HomeVM;
+            });
+            
+            NhanVienViewCommand = new Wpf.Ui.Input.RelayCommand<RadioButton>(o =>
+            {
+                CurrentView = NhanVienVM;
+            });
+            
             SignOutCommand = new RelayCommand<Window>((p) => true, (p) =>
             {
                 p.Hide();

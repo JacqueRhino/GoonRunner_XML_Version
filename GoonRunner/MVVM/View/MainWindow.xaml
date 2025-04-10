@@ -4,7 +4,6 @@
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         xmlns:viewmodel="clr-namespace:GoonRunner.MVVM.ViewModel" 
         d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
@@ -12,12 +11,6 @@
         Name="mainWindow"
         Height="720" Width="1280" MinHeight="500" MinWidth="700" Background="#F9F5D7"
         Icon="/GoonRunner.ico">
-    <!--<i:Interaction.Triggers>
-        <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 
-                               CommandParameter="{Binding ElementName=mainWindow}"/>
-        </i:EventTrigger>
-    </i:Interaction.Triggers>-->
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
@@ -137,7 +130,9 @@
                         <RowDefinition Height="70"/>
                     </Grid.RowDefinitions>
                     <StackPanel Grid.Row="0">
-                            <RadioButton>
+                            <RadioButton
+                                Command="{Binding HomeViewCommand}"
+                                IsChecked="True">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="Home20" FontSize="28"/>
                                     <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
@@ -148,7 +143,8 @@
                                 </RadioButton.Resources>
                             </RadioButton>
                         
-                            <RadioButton>
+                            <RadioButton
+                                Command="{Binding NhanVienViewCommand}">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="PersonAccounts20" FontSize="28"/>
                                     <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
@@ -238,7 +234,8 @@
                       Margin="-6,20,0,10"
                       DragDelta="SetMenuWidth"/>        
             <GroupBox Grid.Column="3" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Main">
-            
+                <ContentControl
+                    Content="{Binding CurrentView}"/> 
             </GroupBox>
         <GridSplitter Name="Split2" Grid.Column="4" Grid.Row="3" Style="{StaticResource GridSplitterColumn}"
                       VerticalAlignment="Stretch" HorizontalAlignment="Left" 
