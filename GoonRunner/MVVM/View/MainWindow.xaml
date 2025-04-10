@@ -243,11 +243,11 @@
                       VerticalAlignment="Stretch" HorizontalAlignment="Left" 
                       ResizeBehavior="PreviousAndNext" ResizeDirection="Columns"
                       Margin="-6,20,0,10"
-                      Visibility="{Binding sp}"
                       DragDelta="CheckSidebarWidth"
                       DragCompleted="SetSidebarWidth"/>
             <GroupBox Grid.Column="5" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Sidebar">
-                
+                <ContentControl 
+                    Content="{Binding CurrentSidebarView}"/>
             </GroupBox>
     </Grid>
 </Window>

@@ -12,6 +12,7 @@ namespace GoonRunner.MVVM.ViewModel
         public ICommand SignOutCommand { get; set; }
         public HomeViewModel HomeVM { get; set; }
         public NhanVienViewModel NhanVienVM { get; set; }
+        public SidebarNhanVienViewModel SidebarNhanVienVM { get; set; }
         private object _currentView;
 
         public object CurrentView
@@ -21,6 +22,18 @@ namespace GoonRunner.MVVM.ViewModel
             {
                 _currentView = value;
                 OnPropertyChanged("CurrentView");
+            }
+        }
+        
+        private object _currentSidebarView;
+
+        public object CurrentSidebarView
+        {
+            get { return _currentSidebarView; }
+            set
+            {
+                _currentSidebarView = value;
+                OnPropertyChanged("CurrentSidebarView");
             }
         }
         
@@ -44,7 +57,7 @@ namespace GoonRunner.MVVM.ViewModel
             set
             {
                 _sidebarLeftGapWidth = value;
-                OnPropertyChanged("SidebarLeftGap");
+                OnPropertyChanged("SidebarLeftGapWidth");
             }
         }
 
@@ -77,8 +90,9 @@ namespace GoonRunner.MVVM.ViewModel
             
             HomeVM = new HomeViewModel();
             NhanVienVM = new NhanVienViewModel();
+            SidebarNhanVienVM = new SidebarNhanVienViewModel();
             CurrentView = HomeVM;
-            DisableSidebar();
+            // DisableSidebar();
             
             //Change View
 
@@ -92,6 +106,7 @@ namespace GoonRunner.MVVM.ViewModel
             NhanVienViewCommand = new Wpf.Ui.Input.RelayCommand<RadioButton>(o =>
             {
                 CurrentView = NhanVienVM;
+                CurrentSidebarView = SidebarNhanVienVM;
                 EnableSidebar();
             });
             
@@ -114,9 +129,6 @@ namespace GoonRunner.MVVM.ViewModel
         private void DisableSidebar()
         {
             SidebarButtonEnabled = false;
-            Split2Enabled = "Collapsed";
-            SidebarLeftGapWidth = 0;
-            SidebarWidth = 0;
         }
     }
 }
