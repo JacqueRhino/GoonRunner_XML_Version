@@ -88,8 +88,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MVVM\View\NhanVien.xaml" />
-    <Page Include="MVVM\View\SidebarView.xaml" />
+    <Page Include="MVVM\View\NhanVienView.xaml" />
+    <Page Include="MVVM\View\SidebarNhanVienView.xaml" />
     <Page Include="Resources\MainResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -190,6 +190,7 @@
     <Compile Include="MVVM\ViewModel\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\NhanVienViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\SidebarNhanVienViewModel.cs" />
     <Compile Include="MVVM\View\ForgotPasswordView.xaml.cs">
       <DependentUpon>ForgotPasswordView.xaml</DependentUpon>
     </Compile>
@@ -203,11 +204,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MVVM\View\NhanVien.xaml.cs">
-      <DependentUpon>NhanVien.xaml</DependentUpon>
+    <Compile Include="MVVM\View\NhanVienView.xaml.cs">
+      <DependentUpon>NhanVienView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MVVM\View\SidebarView.xaml.cs">
-      <DependentUpon>SidebarView.xaml</DependentUpon>
+    <Compile Include="MVVM\View\SidebarNhanVienView.xaml.cs">
+      <DependentUpon>SidebarNhanVienView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

@@ -2,9 +2,9 @@ using System.Windows.Controls;
 
 namespace GoonRunner.MVVM.View
 {
-    public partial class SidebarView : UserControl
+    public partial class NhanVienView : UserControl
     {
-        public SidebarView()
+        public NhanVienView()
         {
             InitializeComponent();
         }

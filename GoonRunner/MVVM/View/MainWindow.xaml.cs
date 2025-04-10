@@ -92,5 +92,12 @@ namespace GoonRunner.MVVM.View
                MainGrid.ColumnDefinitions[5].Width = new GridLength(0);
             }
         }
+
+        private void DisableSidebar(object sender, RoutedEventArgs e)
+        {
+            Split2.Visibility = Visibility.Collapsed;
+            MainGrid.ColumnDefinitions[5].Width = new GridLength(0);
+            MainGrid.ColumnDefinitions[4].Width = new GridLength(0);
+        }
     }
 }

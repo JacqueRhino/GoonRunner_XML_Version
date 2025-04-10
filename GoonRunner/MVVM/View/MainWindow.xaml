@@ -20,8 +20,8 @@
             <ColumnDefinition Width="225" MaxWidth="250"/>
             <ColumnDefinition Width="10"/> <!--gap-->
             <ColumnDefinition Width="*" MinWidth="100"/>
-            <ColumnDefinition Width="10"/> <!--gap-->
-            <ColumnDefinition Width="250" MaxWidth="280"/>
+            <ColumnDefinition  Width="{Binding SidebarLeftGapWidth}"/> <!--gap-->
+            <ColumnDefinition Width="{Binding SidebarWidth}" MaxWidth="280"/>
             <ColumnDefinition Width="20"/> <!--gap-->
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -81,7 +81,8 @@
                     
                     <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">
                         
-                    <Button Height="60" Width="auto" Style="{StaticResource NavButton}"
+                    <Button Height="60" Width="auto" Style="{StaticResource NavButton}" Name="SidebarButton"
+                            IsEnabled="{Binding SidebarButtonEnabled}"
                             Click="ControlSidebar">
                         <StackPanel>
                                 <ui:SymbolIcon Symbol="DualScreenStatusBar24" FontSize="24" Foreground="#7C6F64"/>
@@ -132,6 +133,7 @@
                     <StackPanel Grid.Row="0">
                             <RadioButton
                                 Command="{Binding HomeViewCommand}"
+                                Click="DisableSidebar"
                                 IsChecked="True">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="Home20" FontSize="28"/>
@@ -241,6 +243,7 @@
                       VerticalAlignment="Stretch" HorizontalAlignment="Left" 
                       ResizeBehavior="PreviousAndNext" ResizeDirection="Columns"
                       Margin="-6,20,0,10"
+                      Visibility="{Binding sp}"
                       DragDelta="CheckSidebarWidth"
                       DragCompleted="SetSidebarWidth"/>
             <GroupBox Grid.Column="5" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Sidebar">

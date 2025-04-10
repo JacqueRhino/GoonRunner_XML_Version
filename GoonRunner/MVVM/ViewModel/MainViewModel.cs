@@ -23,6 +23,54 @@ namespace GoonRunner.MVVM.ViewModel
                 OnPropertyChanged("CurrentView");
             }
         }
+        
+        private bool _sidebarButtonEnabled;
+
+        public bool SidebarButtonEnabled
+        {
+            get { return _sidebarButtonEnabled; }
+            set
+            {
+                _sidebarButtonEnabled = value;
+                OnPropertyChanged("SidebarButtonEnabled");
+            }
+        }
+
+        private int _sidebarLeftGapWidth;
+
+        public int SidebarLeftGapWidth
+        {
+            get { return _sidebarLeftGapWidth; }
+            set
+            {
+                _sidebarLeftGapWidth = value;
+                OnPropertyChanged("SidebarLeftGap");
+            }
+        }
+
+        private int _sidebarWidth;
+
+        public int SidebarWidth
+        {
+            get { return _sidebarWidth; }
+            set
+            {
+                _sidebarWidth = value;
+                OnPropertyChanged("SidebarWidth");
+            }
+        }
+
+        private string _split2Enabled;
+
+        public string Split2Enabled
+        {
+            get { return _split2Enabled; }
+            set
+            {
+                _split2Enabled = value;
+                OnPropertyChanged("Split2Enabled");
+            }
+        }
 
         public MainViewModel()
         {
@@ -30,15 +78,21 @@ namespace GoonRunner.MVVM.ViewModel
             HomeVM = new HomeViewModel();
             NhanVienVM = new NhanVienViewModel();
             CurrentView = HomeVM;
+            DisableSidebar();
+            
+            //Change View
 
             HomeViewCommand = new Wpf.Ui.Input.RelayCommand<RadioButton>(o =>
             {
                 CurrentView = HomeVM;
+                DisableSidebar();
+
             });
             
             NhanVienViewCommand = new Wpf.Ui.Input.RelayCommand<RadioButton>(o =>
             {
                 CurrentView = NhanVienVM;
+                EnableSidebar();
             });
             
             SignOutCommand = new RelayCommand<Window>((p) => true, (p) =>
@@ -51,6 +105,18 @@ namespace GoonRunner.MVVM.ViewModel
                 loginWM.ErrorMassage = "";
                 loginWindow.Show();
             });
+        }
+
+        private void EnableSidebar()
+        {
+            SidebarButtonEnabled = true;
+        }
+        private void DisableSidebar()
+        {
+            SidebarButtonEnabled = false;
+            Split2Enabled = "Collapsed";
+            SidebarLeftGapWidth = 0;
+            SidebarWidth = 0;
         }
     }
 }
