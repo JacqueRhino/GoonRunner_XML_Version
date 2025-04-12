@@ -55,8 +55,7 @@
                          Margin="0,0,0,15" 
                          Style="{StaticResource TaggedTextbox}"/>
 
-                <PasswordBox Name="PasswordBox"
-                             Margin="0,0,0,15" 
+                <PasswordBox Name="PasswordBox" 
                              Style="{StaticResource PasswordBoxStyle}"/>
 
                 <TextBlock Name="ForgotPasswordTxt"
