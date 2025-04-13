@@ -52,6 +52,7 @@
                               FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="16"
                               Margin="0,0,0,30" />
                 <TextBox Name="UsernameBox" 
+                         Text="Username"
                          Margin="0,0,0,15" 
                          Style="{StaticResource TaggedTextbox}"/>
 
