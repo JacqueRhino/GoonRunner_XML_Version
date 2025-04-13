@@ -46,29 +46,30 @@
                 
                 <Rectangle Width="auto" Height="auto" PreviewMouseLeftButtonDown="DragMoving" Fill="Transparent"/>
             
-               <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"
-                       FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18"
+                <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"                       
+                       FontFamily="../../Assets/Fonts/#Segoe Fluent Icons" FontWeight="Medium" FontSize="12"
                        BorderThickness="0"
+                       Cursor="Hand"
                        Click="MinimizedOnClick"
-                       Style="{StaticResource WindowControlButton}"
-               >
-                   -   
-               </Button>
+                       Style="{StaticResource WindowControlButton}">
+                     
+                </Button>
                 
                <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
                        Click="MaximizeOnClick"
                        Style="{StaticResource WindowControlButton}"
+                       FontFamily="../../Assets/Fonts/#Segoe Fluent Icons" FontSize="12"
+                       Name="MaximizeButton"
                >
-                   <ui:SymbolIcon Symbol="Maximize16"/>
+                   
                </Button>
                <Button Grid.Row="0" Grid.Column="3" Width="auto" Height="auto"
-                       Foreground="#7C6F64" Background="Transparent"
-                       FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="12"
+                       FontFamily="../../Assets/Fonts/#Segoe Fluent Icons" FontWeight="Medium" FontSize="12"
                        BorderThickness="0"
                        Click="ClosedOnClick"
                        Style="{StaticResource CloseButton}"
                >
-                   X
+                    
                </Button>
         </Grid>
             <GroupBox Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="1" Style="{StaticResource GroupBoxGoonRunner}" Header="Nav">

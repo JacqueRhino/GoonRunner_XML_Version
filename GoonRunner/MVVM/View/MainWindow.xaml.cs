@@ -27,6 +27,9 @@ namespace GoonRunner.MVVM.View
         {
             WindowState = (WindowState == WindowState.Maximized ?
                 WindowState.Normal : WindowState.Maximized);                
+            
+            MaximizeButton.Content = (WindowState == WindowState.Maximized ?
+                "" : "" );
         }
 
         private void MinimizedOnClick(object sender, RoutedEventArgs e)
@@ -41,13 +44,14 @@ namespace GoonRunner.MVVM.View
             {
                 var point = e.GetPosition(this);
                 Top = 0;
-                Left = (Width > point.X ?  point.X/2 : Width/2 + point.X );
+                Left = (Width > point.X ? point.X / 2 : Width / 2 + point.X);
                 WindowState = WindowState.Normal;
+                MaximizeButton.Content = "";
             }
 
             DragMove();
         }
-        
+
         private Point GetMousePosition(object sender, MouseButtonEventArgs e)
         {
             var point = e.GetPosition(this);

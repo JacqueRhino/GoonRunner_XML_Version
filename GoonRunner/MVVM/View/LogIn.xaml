@@ -68,7 +68,7 @@
                     </TextBlock.InputBindings>
                 </TextBlock>
 
-                <Button Name="btnLogIn"
+                <Button Name="ButtonLogIn"
                         FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium"
                         Foreground="#F9F5D7" Background="#076678"
                         Width="221" Height="61"
@@ -105,25 +105,23 @@
                 <Rectangle Width="auto" Height="auto" PreviewMouseLeftButtonDown="DragMoving" Fill="Transparent"/>
 
                 <Button Grid.Row="0" Grid.Column="1" Width="auto" Height="auto"                       
-                       Foreground="#7C6F64" Background="Transparent"
-                       FontFamily="JetBrains Mono" FontWeight="Medium" FontSize="12"
+                       FontFamily="../../Assets/Fonts/#Segoe Fluent Icons" FontWeight="Medium" FontSize="12"
                        BorderThickness="0"
                        Cursor="Hand"
                        Click="MinimizedOnClick"
                        Style="{StaticResource WindowControlButton}">
-                    -
-               </Button>
+                     
+                </Button>
                <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
                        Style="{StaticResource WindowControlButton}"/>
 
                 <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
-                       Foreground="#7C6F64" Background="Transparent"
-                       FontFamily="JetBrains Mono" FontWeight="Medium" FontSize="12"
+                       FontFamily="../../Assets/Fonts/#Segoe Fluent Icons" FontWeight="Medium" FontSize="12"
                        BorderThickness="0"
                        Cursor="Hand"
                        Click="ClosedOnClick"
                        Style="{StaticResource CloseButton}">
-                    X
+                    
                 </Button>
             </Grid>
 
