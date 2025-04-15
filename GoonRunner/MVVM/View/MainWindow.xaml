@@ -247,7 +247,10 @@
                       DragDelta="CheckSidebarWidth"
                       DragCompleted="SetSidebarWidth"/>
             <GroupBox Grid.Column="5" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Sidebar">
-                <ContentControl 
+                <ContentControl Height="590" Width="250"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch"
+                    
                     Content="{Binding CurrentSidebarView}"/>
             </GroupBox>
     </Grid>

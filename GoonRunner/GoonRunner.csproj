@@ -96,6 +96,8 @@
     </Page>
     <Page Include="Theme\ButtonTheme.xaml" />
     <Page Include="Theme\CloseButton.xaml" />
+    <Page Include="Theme\ComboBox.xaml" />
+    <Page Include="Theme\DatePickerTheme.xaml" />
     <Page Include="Theme\ErrorMessageTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

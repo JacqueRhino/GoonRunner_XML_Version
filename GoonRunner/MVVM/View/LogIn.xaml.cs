@@ -29,13 +29,5 @@ namespace GoonRunner.MVVM.View
             return true;
         }
 
-        private void LogInButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (!AuthenticateSuccessful()) return;
-            var mainWindow = new MainWindow();
-            Application.Current.MainWindow = mainWindow;
-            this.Close();
-            mainWindow.Show();
-        }
     }
 }

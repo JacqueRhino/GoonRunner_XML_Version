@@ -3,8 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:GoonRunner.MVVM.View"
              xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
              mc:Ignorable="d"
-             d:DesignHeight="590" d:DesignWidth="250" Background="#F9F5D7">
+             Background="#F9F5D7"
+             d:DesignHeight="590" d:DesignWidth="250">
+    <Grid VerticalAlignment="Top" HorizontalAlignment="Left">
+        
+        <StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <ui:SymbolIcon Symbol="PersonCircle20" FontSize="70" Foreground="#7C6F64"/>
+                <StackPanel>
+                    <TextBox Name="Lastname" 
+                             Text="Nhập họ"
+                             Style="{StaticResource TaggedTextboxSmall}"/>
+                    <TextBox Name="Firstname" 
+                             Text="Nhập tên"
+                             Style="{StaticResource TaggedTextboxSmall}"/>
+                </StackPanel>
+            </StackPanel>
+                <TextBox Name="Address" 
+                         Text="Nhập địa chỉ"
+                         Style="{StaticResource TaggedTextboxBig}"/>
+                <TextBox Name="Contact" 
+                         Text="Nhập số điện thoại"
+                         Style="{StaticResource TaggedTextboxBig}"/>
+                <TextBox Name="CMND" 
+                         Text="Nhập số CMND"
+                         Style="{StaticResource TaggedTextboxBig}"/>
+                
+                <ComboBox SelectedIndex="0" FontSize="12" FontFamily="#Jetbrains Mono" BorderBrush="#7C6F64" Foreground="#7C6F64"
+                          Margin="0,0,0,5">
+                           <ComboBoxItem BorderBrush="#7C6F64" Content="Nhân viên bán hàng"/> 
+                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Châm sóc khách hàng"/> 
+                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Nhân viên kiểm kho"/> 
+                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Quản lý cửa hàng"/> 
+                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Nhân viên kỹ thuật web"/> 
+                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Nhân viên bào hành"/> 
+                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Nhân viên Marketing"/> 
+                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Giao hàng"/> 
+                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Bảo vệ"/> 
+                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Lao công"/> 
+                </ComboBox>
+                    
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox SelectedIndex="0" FontSize="12" FontFamily="#Jetbrains Mono" BorderBrush="#7C6F64" Foreground="#7C6F64"
+                              Margin="0,0,5,0">
+                               <ComboBoxItem Content="Nam"/> 
+                               <ComboBoxItem Content="Nữ"/> 
+                    </ComboBox>
+                    
+                    <DatePicker VerticalContentAlignment="Center" Foreground="#7C6F64" Width="150" BorderBrush="#7C6F64" Style="{StaticResource DatePickerGoonRunnerStyle}"/>
+                </StackPanel>
+        </StackPanel>
+    </Grid>
 </UserControl>

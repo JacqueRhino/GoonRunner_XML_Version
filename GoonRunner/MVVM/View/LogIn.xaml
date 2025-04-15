@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:viewmodel="clr-namespace:GoonRunner.MVVM.ViewModel" 
         d:DataContext="{d:DesignInstance Type=viewmodel:LoginViewModel}"
         DataContext="{StaticResource LoginVM}"
@@ -51,15 +52,15 @@
                               VerticalAlignment="Center" HorizontalAlignment="Center"
                               FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="16"
                               Margin="0,0,0,30" />
-                <TextBox Name="UsernameBox" 
-                         Text="Username"
+                <TextBox Name="Username" 
+                         Text="Nhập username"
                          Margin="0,0,0,15" 
                          Style="{StaticResource TaggedTextbox}"/>
 
                 <PasswordBox Name="PasswordBox"
                              Margin="0,0,0,15" 
                              Style="{StaticResource PasswordBoxStyle}"/>
-
+                
                 <TextBlock Name="ForgotPasswordTxt"
                            Text="Quên mật khẩu?"
                            Margin="0,0,7,10"
