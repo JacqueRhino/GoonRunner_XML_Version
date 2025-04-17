@@ -6,6 +6,11 @@ using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
 using GoonRunner.MVVM.View;
+using System.Data.Entity.Core.Objects;
+using System.Runtime.Remoting.Contexts;
+using System.Windows.Threading;
+using System.Data.SqlClient;
+using System;
 
 namespace GoonRunner.MVVM.ViewModel
 {
@@ -14,10 +19,18 @@ namespace GoonRunner.MVVM.ViewModel
         public bool IsLogin { get; set; }
         private string _userName;
         public string UserName { get => _userName; set { _userName = value; OnPropertyChanged(); } }
+
         private string _password;
         public string Password { get => _password; set { _password = value; OnPropertyChanged(); } }
+
         private string _errormessage;
         public string ErrorMassage { get => _errormessage; set { _errormessage = value; OnPropertyChanged(); } }
+
+        private string _privilege;
+        public string Privilege { get => _privilege; set { _privilege = value; OnPropertyChanged(); } }
+
+        private string _displayname;
+        public string DisplayName { get => _displayname; set { _displayname = value; OnPropertyChanged(); } }
         public ICommand LoginCommand { get; set; }
         public ICommand PasswordChangedCommand { get; set; }
         public ICommand ForgotPasswordCommand { get; set; }
@@ -32,13 +45,10 @@ namespace GoonRunner.MVVM.ViewModel
                 var forgotPasswordView = new ForgotPasswordView();
                 forgotPasswordView.Show();
                 p.Hide();
-
             });
         }
-
         private void Login(Window p)
         {
-
             if (p == null)
                 return;
 
@@ -67,19 +77,35 @@ namespace GoonRunner.MVVM.ViewModel
                 return;
             }
 
-            string passEncode = MD5Hash(Password);
-            var accCount = DataProvider.Ins.goonRunnerDB.ACCNHANVIENs.Count(record => record.UserName == UserName && record.Pass == passEncode);
-
-            if (accCount > 0)
+            // Kiểm tra tài khoản
+            if (CheckAccount())
             {
                 IsLogin = true;
+                MessageBox.Show("Đăng nhập dưới quyền " + Privilege);
                 p.Hide();
                 MainWindow mainwindow = new MainWindow();
-                mainwindow.Show(); 
+                mainwindow.Show();
             }
             else
             {
-                ErrorMassage = "Tên người dùng hoặc mật khẩu bị sai, vui lòng nhập lại.";
+                ErrorMassage = "Tên tài khoản hoặc mật khẩu không đúng.";
+            }
+        }
+
+        private bool CheckAccount()
+        {
+            string EncodedPass = MD5Hash(Password);
+            using (var context = new GoonRunnerEntities())
+            {
+                int accCount = context.ACCNHANVIENs.Count(record => record.UserName == UserName && record.Pass == EncodedPass); // Kiểm tra có tài khoản hay không
+                DisplayName = context.ACCNHANVIENs.Where(a => a.UserName == UserName && a.Pass == EncodedPass)
+                                                  .Select(a => a.DisplayName).FirstOrDefault(); // Lấy dữ liệu từ cột DisplayName bên CSDL qua
+                Privilege = context.ACCNHANVIENs.Where(record => record.UserName == UserName && record.Pass == EncodedPass)
+                                                .Select(record => record.Quyen).FirstOrDefault(); // Lấy dữ liệu từ cột Quyen bên CSDL qua
+                if (accCount > 0)
+                    return true;
+                else
+                    return false;
             }
         }
         private static string MD5Hash(string input)
