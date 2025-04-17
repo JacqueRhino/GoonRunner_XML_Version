@@ -47,19 +47,102 @@
                         </Image.Source>
                     </Image>
                 </Viewbox>
-                <TextBlock Text="Đăng Nhập Tài Khoản"
-                              Foreground="#7C6F64"
-                              VerticalAlignment="Center" HorizontalAlignment="Center"
-                              FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="16"
-                              Margin="0,0,0,30" />
-                <TextBox Name="Username" 
-                         Text="Nhập username"
-                         Margin="0,0,0,15" 
-                         Style="{StaticResource TaggedTextbox}"/>
-
-                <PasswordBox Name="PasswordBox"
-                             Margin="0,0,0,15" 
-                             Style="{StaticResource PasswordBoxStyle}"/>
+                <GroupBox Style="{StaticResource GroupboxForTextbox}"
+                          Header="Username">
+                    <Grid>
+                        <TextBox Margin="1"
+                                 Text="{Binding UserName}"
+                                 BorderThickness="0"
+                                 Background="Transparent"
+                                 VerticalContentAlignment="Center"
+                                 FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                 Padding="3,0,0,5"
+                                 FontWeight="Regular"
+                                 Foreground="#3c3836"
+                                 Name="Username"
+                        />
+                        
+                        <TextBlock IsHitTestVisible="False"
+                                   Text="Nhập username"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                   FontWeight="Light"
+                                   Margin="5,0,0,5"
+                                   FontSize="12"
+                                   Foreground="{Binding Foreground,ElementName=Username}">
+                                
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=Username}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                </GroupBox>
+                
+                <GroupBox Style="{StaticResource GroupboxForTextbox}"
+                          Header="Password">
+                    <Grid>
+                        <!-- <TextBox Margin="1" -->
+                        <!--          Text="{Binding UserName}" -->
+                        <!--          BorderThickness="0" -->
+                        <!--          Background="Transparent" -->
+                        <!--          VerticalContentAlignment="Center" -->
+                        <!--          FontFamily="../../Assets/Fonts/#JetBrains Mono" -->
+                        <!--          Padding="3,0,0,5" -->
+                        <!--          FontWeight="Regular" -->
+                        <!--          Foreground="#3c3836" -->
+                        <!--          Name="Password" -->
+                        <!-- /> -->
+                        <PasswordBox 
+                            Margin="1"
+                            BorderThickness="0"
+                            Background="Transparent"
+                            VerticalContentAlignment="Center"
+                            FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                            FontWeight="Light"
+                            Padding="3,0,0,5"
+                            Foreground="#3c3836"
+                            PasswordChar="*"
+                            x:Name="Password">
+                                        
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="PasswordChanged">
+                                    <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}" 
+                                                           CommandParameter="{Binding ElementName=Password}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </PasswordBox>
+                        
+                        <TextBlock IsHitTestVisible="False"
+                                   Text="Nhập mật khẩu"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Left"
+                                   FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                   FontWeight="Light"
+                                   Margin="5,0,0,5"
+                                   FontSize="12"
+                                   Foreground="{Binding Foreground,ElementName=Password}">
+                                
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Password, ElementName=Password}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+                </GroupBox>
                 
                 <TextBlock Name="ForgotPasswordTxt"
                            Text="Quên mật khẩu?"
