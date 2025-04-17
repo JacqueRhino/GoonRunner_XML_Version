@@ -53,7 +53,7 @@
                 </Viewbox>
                 
                 <GroupBox Style="{StaticResource GroupboxForTextbox}"
-                          Header="Username">
+                          Header="Username" Width="240">
                     <Grid>
                         <TextBox Margin="1"
                                  Text="{Binding UserName}"
@@ -92,7 +92,7 @@
                 </GroupBox>
                 
                 <GroupBox Style="{StaticResource GroupboxForTextbox}"
-                          Header="Password">
+                          Header="Password" Width="240" Margin="0,0,0,10">
                     <Grid>
                         <PasswordBox 
                             Margin="1"
