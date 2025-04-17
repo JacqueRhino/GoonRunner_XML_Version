@@ -1,4 +1,5 @@
-﻿<Window x:Class="GoonRunner.MVVM.View.MainWindow"
+﻿<!-- Height="720" Width="1280" MinHeight="500" MinWidth="700" Background="#fbf1c7" -->
+<Window x:Class="GoonRunner.MVVM.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
@@ -9,7 +10,7 @@
         d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         DataContext="{StaticResource MainVM}"
         Name="mainWindow"
-        Height="720" Width="1280" MinHeight="500" MinWidth="700" Background="#F9F5D7"
+        Height="720" Width="1280" MinHeight="500" MinWidth="700" Background="#fbf1c7"
         Icon="/GoonRunner.ico">
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="0" CornerRadius="0" CaptionHeight="0"/>
@@ -247,7 +248,7 @@
                       DragDelta="CheckSidebarWidth"
                       DragCompleted="SetSidebarWidth"/>
             <GroupBox Grid.Column="5" Grid.Row="3" Style="{StaticResource GroupBoxGoonRunner}" Header="Sidebar">
-                <ContentControl Height="590" Width="250"
+                <ContentControl 
                     HorizontalContentAlignment="Stretch"
                     VerticalContentAlignment="Stretch"
                     

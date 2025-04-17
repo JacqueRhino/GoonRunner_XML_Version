@@ -5,56 +5,273 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
              mc:Ignorable="d"
-             Background="#F9F5D7"
              d:DesignHeight="590" d:DesignWidth="250">
-    <Grid VerticalAlignment="Top" HorizontalAlignment="Left">
-        
+    <Grid>
         <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Button Width="100" HorizontalAlignment="Center" Cursor="Hand">
+                            <Grid>
+                                <ui:SymbolIcon Symbol="PersonCircle20" FontSize="70" Foreground="#3c3836" Name="AvatarIcon" />
+                                <Image Name="AvatarImage">
+                                    <!-- <Image.Source> -->
+                                    <!--     a -->
+                                    <!-- </Image.Source> -->
+                                </Image>
+                            </Grid>
+                        </Button>
+                        
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="51"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            
+                            <GroupBox Grid.Row="0" Style="{StaticResource GroupboxForTextbox}"
+                                      Header="Lastname">
+                                <Grid>
+                                    <TextBox Margin="1"
+                                             Text="{Binding UserName}"
+                                             BorderThickness="0"
+                                             Background="Transparent"
+                                             VerticalContentAlignment="Center"
+                                             FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                             Padding="3,0,0,5"
+                                             FontWeight="Regular"
+                                             Foreground="#3c3836"
+                                             Name="InputBoxLastname"
+                                    />
+                                    
+                                    <TextBlock IsHitTestVisible="False"
+                                               Text="Nhập họ"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left"
+                                               FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                               FontWeight="Light"
+                                               Margin="5,0,0,5"
+                                               FontSize="12"
+                                               Foreground="{Binding Foreground,ElementName=InputBoxLastname}">
+                                            
+                                        <TextBlock.Style>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Text, ElementName=InputBoxLastname}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                                <Setter Property="Visibility" Value="Hidden"/>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </GroupBox>
+                            
+                            <GroupBox Grid.Row="1" Style="{StaticResource GroupboxForTextbox}"
+                                      Header="Firstname">
+                                <Grid>
+                                    <TextBox Margin="1"
+                                             Text="{Binding UserName}"
+                                             BorderThickness="0"
+                                             Background="Transparent"
+                                             VerticalContentAlignment="Center"
+                                             FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                             Padding="3,0,0,5"
+                                             FontWeight="Regular"
+                                             Foreground="#3c3836"
+                                             Name="InputboxFirstname"
+                                    />
+                                    
+                                    <TextBlock IsHitTestVisible="False"
+                                               Text="Nhập tên"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Left"
+                                               FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                               FontWeight="Light"
+                                               Margin="5,0,0,5"
+                                               FontSize="12"
+                                               Foreground="{Binding Foreground,ElementName=InputboxFirstname}"
+                                               >
+                                            
+                                        <TextBlock.Style>
+                                            <Style TargetType="{x:Type TextBlock}">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Text, ElementName=InputboxFirstname}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                                <Setter Property="Visibility" Value="Hidden"/>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </GroupBox>
+                        </Grid>
+                    </Grid>
             
-            <StackPanel Orientation="Horizontal">
-                <ui:SymbolIcon Symbol="PersonCircle20" FontSize="70" Foreground="#7C6F64"/>
-                <StackPanel>
-                    <TextBox Name="Lastname" 
-                             Text="Nhập họ"
-                             Style="{StaticResource TaggedTextboxSmall}"/>
-                    <TextBox Name="Firstname" 
-                             Text="Nhập tên"
-                             Style="{StaticResource TaggedTextboxSmall}"/>
-                </StackPanel>
-            </StackPanel>
-                <TextBox Name="Address" 
-                         Text="Nhập địa chỉ"
-                         Style="{StaticResource TaggedTextboxBig}"/>
-                <TextBox Name="Contact" 
-                         Text="Nhập số điện thoại"
-                         Style="{StaticResource TaggedTextboxBig}"/>
-                <TextBox Name="CMND" 
-                         Text="Nhập số CMND"
-                         Style="{StaticResource TaggedTextboxBig}"/>
+                <GroupBox Style="{StaticResource GroupboxForTextbox}"
+                              Header="Address">
+                        <Grid>
+                            <TextBox Margin="1"
+                                     Text="{Binding UserName}"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                     Padding="3,0,0,5"
+                                     FontWeight="Regular"
+                                     Foreground="#3c3836"
+                                     Name="InputboxAdress"
+                            />
+                            
+                            <TextBlock IsHitTestVisible="False"
+                                       Text="Nhập địa chỉ"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                       FontWeight="Light"
+                                       Margin="5,0,0,5"
+                                       FontSize="12"
+                                       Foreground="{Binding Foreground,ElementName=InputboxAdress}"
+                                       >
+                                    
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=InputboxAdress}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </GroupBox>
+            
+                <GroupBox Style="{StaticResource GroupboxForTextbox}"
+                              Header="Contact">
+                        <Grid>
+                            <TextBox Margin="1"
+                                     Text="{Binding UserName}"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                     Padding="3,0,0,5"
+                                     FontWeight="Regular"
+                                     Foreground="#3c3836"
+                                     Name="InputBoxContact"
+                            />
+                            
+                            <TextBlock IsHitTestVisible="False"
+                                       Text="Nhập địa chỉ"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                       FontWeight="Light"
+                                       Margin="5,0,0,5"
+                                       FontSize="12"
+                                       Foreground="{Binding Foreground,ElementName=InputboxCmnd}"
+                                       >
+                                    
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=InputBoxContact}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </GroupBox>
+            
+                <GroupBox Style="{StaticResource GroupboxForTextbox}"
+                              Header="CMND">
+                        <Grid>
+                            <TextBox Margin="1"
+                                     Text="{Binding UserName}"
+                                     BorderThickness="0"
+                                     Background="Transparent"
+                                     VerticalContentAlignment="Center"
+                                     FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                     Padding="3,0,0,5"
+                                     FontWeight="Regular"
+                                     Foreground="#3c3836"
+                                     Name="InputboxCmnd"
+                            />
+                            
+                            <TextBlock IsHitTestVisible="False"
+                                       Text="Nhập chứng minh nhân dân"
+                                       VerticalAlignment="Center"
+                                       HorizontalAlignment="Left"
+                                       FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                                       FontWeight="Light"
+                                       Margin="5,0,0,5"
+                                       FontSize="12"
+                                       Foreground="{Binding Foreground,ElementName=InputboxCmnd}"
+                                       >
+                                    
+                                <TextBlock.Style>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Text, ElementName=InputboxCmnd}" Value="">
+                                                <Setter Property="Visibility" Value="Visible"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Visibility" Value="Hidden"/>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+                        </Grid>
+                    </GroupBox>
                 
-                <ComboBox SelectedIndex="0" FontSize="12" FontFamily="#Jetbrains Mono" BorderBrush="#7C6F64" Foreground="#7C6F64"
-                          Margin="0,0,0,5">
-                           <ComboBoxItem BorderBrush="#7C6F64" Content="Nhân viên bán hàng"/> 
-                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Châm sóc khách hàng"/> 
-                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Nhân viên kiểm kho"/> 
-                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Quản lý cửa hàng"/> 
-                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Nhân viên kỹ thuật web"/> 
-                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Nhân viên bào hành"/> 
-                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Nhân viên Marketing"/> 
-                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Giao hàng"/> 
-                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Bảo vệ"/> 
-                           <ComboBoxItem BorderBrush="#7C6F64"  Content="Lao công"/> 
+                    <ComboBox SelectedIndex="0" FontSize="12" BorderBrush="#3c3836" Foreground="#3c3836"
+                              Name="Role"
+                              Padding="5,5,0,5"
+                              Margin="0,0,0,5"
+                              Background="Transparent">
+                           <ComboBoxItem Content="Nhân viên bán hàng"/> 
+                           <ComboBoxItem Content="Châm sóc khách hàng"/> 
+                           <ComboBoxItem Content="Nhân viên kiểm kho"/> 
+                           <ComboBoxItem Content="Quản lý cửa hàng"/> 
+                           <ComboBoxItem Content="Nhân viên kỹ thuật web"/> 
+                           <ComboBoxItem Content="Nhân viên bào hành"/> 
+                           <ComboBoxItem Content="Nhân viên Marketing"/> 
+                           <ComboBoxItem Content="Giao hàng"/> 
+                           <ComboBoxItem Content="Bảo vệ"/> 
+                           <ComboBoxItem Content="Lao công"/> 
                 </ComboBox>
                     
-                <StackPanel Orientation="Horizontal">
-                    <ComboBox SelectedIndex="0" FontSize="12" FontFamily="#Jetbrains Mono" BorderBrush="#7C6F64" Foreground="#7C6F64"
-                              Margin="0,0,5,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox SelectedIndex="0" FontSize="12" BorderBrush="#3c3836" Foreground="#3c3836"
+                              Name="Sex"
+                              Padding="5,5,0,5"
+                              Margin="0,0,0,5"
+                              Background="Transparent">
                                <ComboBoxItem Content="Nam"/> 
                                <ComboBoxItem Content="Nữ"/> 
                     </ComboBox>
                     
-                    <DatePicker VerticalContentAlignment="Center" Foreground="#7C6F64" Width="150" BorderBrush="#7C6F64" Style="{StaticResource DatePickerGoonRunnerStyle}"/>
+                    <DatePicker Grid.Column="1" Name="Birthdate" 
+                                VerticalContentAlignment="Center"
+                                Foreground="#3c3836" 
+                                BorderBrush="#3c3836"
+                                FontFamily="pack://application:,,,/Assets/Fonts/#JetBrains Mono"
+                                Margin="0,0,0,5"
+                                />
+                </Grid>
                 </StackPanel>
-        </StackPanel>
+        
     </Grid>
 </UserControl>

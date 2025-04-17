@@ -86,6 +86,7 @@ namespace GoonRunner.MVVM.View
             {
                Split2.Visibility = Visibility.Collapsed;
             }
+
         }
 
         private void SetSidebarWidth(object sender, DragCompletedEventArgs e)
