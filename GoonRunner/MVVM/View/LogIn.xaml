@@ -57,7 +57,7 @@
                                  VerticalContentAlignment="Center"
                                  FontFamily="../../Assets/Fonts/#JetBrains Mono"
                                  Padding="3,0,0,5"
-                                 FontWeight="Regular"
+                                 FontWeight="Light"
                                  Foreground="#3c3836"
                                  Name="Username"
                         />
@@ -70,7 +70,7 @@
                                    FontWeight="Light"
                                    Margin="5,0,0,5"
                                    FontSize="12"
-                                   Foreground="{Binding Foreground,ElementName=Username}">
+                                   Foreground="#A89984">
                                 
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
@@ -128,7 +128,7 @@
                                    FontWeight="Light"
                                    Margin="5,0,0,5"
                                    FontSize="12"
-                                   Foreground="{Binding Foreground,ElementName=Password}">
+                                   Foreground="#A89984">
                                 
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
