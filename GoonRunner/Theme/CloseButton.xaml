@@ -3,7 +3,7 @@
     <Style TargetType="{x:Type Button}"
            x:Key="CloseButton">
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="#7C6F64" />
+        <Setter Property="Foreground" Value="#3c3836" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">

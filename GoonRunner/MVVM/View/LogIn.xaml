@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:viewmodel="clr-namespace:GoonRunner.MVVM.ViewModel" 
         d:DataContext="{d:DesignInstance Type=viewmodel:LoginViewModel}"
         DataContext="{StaticResource LoginVM}"
@@ -18,10 +17,15 @@
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         Icon="/GoonRunner.ico">
+    <Window.Resources>
+    <SolidColorBrush x:Key="Foreground" Color="#3c3836"/>
+    <SolidColorBrush x:Key="Background" Color="#fbf1c7"/>
+    </Window.Resources>
+    
     <Grid>
         <Grid VerticalAlignment="Center"
                  HorizontalAlignment="Center"
-                 Background="#F9F5D7">
+                 Background="{StaticResource Background}">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="380"/>
@@ -47,6 +51,7 @@
                         </Image.Source>
                     </Image>
                 </Viewbox>
+                
                 <GroupBox Style="{StaticResource GroupboxForTextbox}"
                           Header="Username">
                     <Grid>
@@ -58,7 +63,7 @@
                                  FontFamily="../../Assets/Fonts/#JetBrains Mono"
                                  Padding="3,0,0,5"
                                  FontWeight="Light"
-                                 Foreground="#3c3836"
+                                 Foreground="{StaticResource Foreground}"
                                  Name="Username"
                         />
                         
@@ -89,17 +94,6 @@
                 <GroupBox Style="{StaticResource GroupboxForTextbox}"
                           Header="Password">
                     <Grid>
-                        <!-- <TextBox Margin="1" -->
-                        <!--          Text="{Binding UserName}" -->
-                        <!--          BorderThickness="0" -->
-                        <!--          Background="Transparent" -->
-                        <!--          VerticalContentAlignment="Center" -->
-                        <!--          FontFamily="../../Assets/Fonts/#JetBrains Mono" -->
-                        <!--          Padding="3,0,0,5" -->
-                        <!--          FontWeight="Regular" -->
-                        <!--          Foreground="#3c3836" -->
-                        <!--          Name="Password" -->
-                        <!-- /> -->
                         <PasswordBox 
                             Margin="1"
                             BorderThickness="0"
@@ -108,7 +102,7 @@
                             FontFamily="../../Assets/Fonts/#JetBrains Mono"
                             FontWeight="Light"
                             Padding="3,0,0,5"
-                            Foreground="#3c3836"
+                            Foreground="{StaticResource Foreground}"
                             PasswordChar="*"
                             x:Name="Password">
                                         
@@ -155,7 +149,7 @@
 
                 <Button Name="ButtonLogIn"
                         FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium"
-                        Foreground="#F9F5D7" Background="#076678"
+                        Foreground="{StaticResource Background}" Background="#076678"
                         Width="221" Height="61"
                         Margin="0,20,0,0"
                         Style="{StaticResource SigninButton}"
@@ -211,18 +205,18 @@
             </Grid>
 
             <!-- Horizontal Line -->
-            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="14" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="#7C6F64"/>
-            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="304" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="#7C6F64"/>
-            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" VerticalAlignment="Bottom" Fill="#7C6F64"/>
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="14" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="{StaticResource Foreground}"/>
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="304" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="{StaticResource Foreground}"/>
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" VerticalAlignment="Bottom" Fill="{StaticResource Foreground}"/>
             <!-- Vertical Line -->
-            <Rectangle Grid.Row="0" Grid.RowSpan="5" Width="2" HorizontalAlignment="Left" Fill="#7C6F64"/>
-            <Rectangle Grid.Row="0" Grid.RowSpan="5" Width="2" HorizontalAlignment="Right" Fill="#7C6F64"/>
+            <Rectangle Grid.Row="0" Grid.RowSpan="5" Width="2" HorizontalAlignment="Left" Fill="{StaticResource Foreground}"/>
+            <Rectangle Grid.Row="0" Grid.RowSpan="5" Width="2" HorizontalAlignment="Right" Fill="{StaticResource Foreground}"/>
 
 
         </Grid>
         <TextBlock Text="Log in"
                    FontSize="16" FontFamily="JetBrains Mono" FontWeight="Bold"
-                   Foreground="#7C6F64"
+                   Foreground="{StaticResource Foreground}"
                    Width="auto" Height="auto"
                    HorizontalAlignment="Left" VerticalAlignment="Top"
                    Margin="16,0,0,0" PreviewMouseDown="DragMoving"/>
