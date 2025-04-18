@@ -83,7 +83,7 @@ namespace GoonRunner.MVVM.ViewModel
                 IsLogin = true;
                 MessageBox.Show("Đăng nhập dưới quyền " + Privilege);
                 p.Hide();
-                MainWindow mainwindow = new MainWindow();
+                MainWindowView mainwindow = new MainWindowView();
                 mainwindow.Show();
             }
             else

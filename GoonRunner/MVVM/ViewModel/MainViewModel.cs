@@ -90,7 +90,7 @@ namespace GoonRunner.MVVM.ViewModel
 
         public MainViewModel()
         {
-            LogIn loginWindow = new LogIn();
+            LogInView loginWindow = new LogInView();
             var loginVM = loginWindow.DataContext as LoginViewModel; // Gọi LoginViewModel
             DisplayName = loginVM.DisplayName; // Lấy UserName
             Privilege = loginVM.Privilege; // Lấy Privilege
