@@ -113,7 +113,7 @@ namespace GoonRunner.MVVM.ViewModel
             SignOutCommand = new RelayCommand<Window>((p) => true, (p) =>
             {
                 p.Hide();
-                LogIn loginWindow = new LogIn();
+                LogInView loginWindow = new LogInView();
                 var loginWM = loginWindow.DataContext as LoginViewModel;
                 loginWM.UserName = "";
                 loginWM.Password = "";

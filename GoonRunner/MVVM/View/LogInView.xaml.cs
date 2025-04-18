@@ -3,9 +3,9 @@ using System.Windows.Input;
 
 namespace GoonRunner.MVVM.View
 {
-    public partial class LogIn 
+    public partial class LogInView 
     {
-        public LogIn()
+        public LogInView()
         {
             InitializeComponent();
         }

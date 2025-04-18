@@ -74,7 +74,7 @@ namespace GoonRunner.MVVM.ViewModel
             {
                 IsLogin = true;
                 p.Hide();
-                MainWindow mainwindow = new MainWindow();
+                MainWindowView mainwindow = new MainWindowView();
                 mainwindow.Show(); 
             }
             else

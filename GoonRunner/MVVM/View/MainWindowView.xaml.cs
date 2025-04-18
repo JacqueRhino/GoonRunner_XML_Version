@@ -9,9 +9,9 @@ namespace GoonRunner.MVVM.View
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class MainWindowView
     {
-        public MainWindow()
+        public MainWindowView()
         {
             InitializeComponent();
             MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;

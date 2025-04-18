@@ -1,5 +1,5 @@
         <!-- xmlns:local="clr-namespace:GoonRunner.MVVM.View" -->
-<Window x:Class="GoonRunner.MVVM.View.LogIn"
+<Window x:Class="GoonRunner.MVVM.View.LogInView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -13,6 +13,7 @@
         Height="500" Width="380"
         WindowStyle="None"
         ResizeMode="NoResize"
+        Title="GoonRunner"
         Background="Transparent"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
@@ -23,21 +24,10 @@
     </Window.Resources>
     
     <Grid>
-        <Grid VerticalAlignment="Center"
-                 HorizontalAlignment="Center"
-                 Background="{StaticResource Background}">
+        <Grid Margin="0,10,0,0"
+            Background="{StaticResource Background}">
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="380"/>
-            </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="480"/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
 
             <Rectangle ></Rectangle>
             <StackPanel Grid.Row="0" Grid.Column="0" 
@@ -52,8 +42,15 @@
                     </Image>
                 </Viewbox>
                 
+                <TextBlock Text="Đăng Nhập Tài Khoản"
+                           Foreground="{StaticResource Foreground}"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                           FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="16"
+                           Margin="0,0,0,20" />
+                
                 <GroupBox Style="{StaticResource GroupboxForTextbox}"
-                          Header="Username" Width="240">
+                          Header="Username" Width="240"
+                          Margin="10">
                     <Grid>
                         <TextBox Margin="1"
                                  Text="{Binding UserName}"
@@ -92,7 +89,7 @@
                 </GroupBox>
                 
                 <GroupBox Style="{StaticResource GroupboxForTextbox}"
-                          Header="Password" Width="240" Margin="0,0,0,10">
+                          Header="Password" Width="240" Margin="10">
                     <Grid>
                         <PasswordBox 
                             Margin="1"
@@ -148,7 +145,6 @@
                 </TextBlock>
 
                 <Button Name="ButtonLogIn"
-                        FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium"
                         Foreground="{StaticResource Background}" Background="#076678"
                         Width="221" Height="61"
                         Margin="0,20,0,0"
@@ -156,7 +152,11 @@
                         Command="{Binding LoginCommand}"
                         CommandParameter="{Binding ElementName=loginWindow}"
                         IsDefault="True">
-                    <TextBlock>Đăng nhập</TextBlock>
+                    <TextBlock FontSize="20"
+                               FontWeight="Regular"
+                               FontFamily="pack://application:,,,/Assets/Fonts/#JetBrains Mono">
+                        Đăng nhập
+                    </TextBlock>
                 </Button>
 
                 <TextBlock Name="ErrorMessageText"
@@ -205,12 +205,12 @@
             </Grid>
 
             <!-- Horizontal Line -->
-            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="14" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="{StaticResource Foreground}"/>
-            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" Width="304" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="{StaticResource Foreground}"/>
-            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" Height="2" VerticalAlignment="Bottom" Fill="{StaticResource Foreground}"/>
+            <Rectangle Grid.Row="0" Height="2" Width="14" VerticalAlignment="Top" HorizontalAlignment="Left" Fill="{StaticResource Foreground}"/>
+            <Rectangle Grid.Row="0" Height="2" Width="304" VerticalAlignment="Top" HorizontalAlignment="Right" Fill="{StaticResource Foreground}"/>
+            <Rectangle Grid.Row="0" Height="2" VerticalAlignment="Bottom" Fill="{StaticResource Foreground}"/>
             <!-- Vertical Line -->
-            <Rectangle Grid.Row="0" Grid.RowSpan="5" Width="2" HorizontalAlignment="Left" Fill="{StaticResource Foreground}"/>
-            <Rectangle Grid.Row="0" Grid.RowSpan="5" Width="2" HorizontalAlignment="Right" Fill="{StaticResource Foreground}"/>
+            <Rectangle Grid.Row="0" Width="2" HorizontalAlignment="Left" Fill="{StaticResource Foreground}"/>
+            <Rectangle Grid.Row="0" Width="2" HorizontalAlignment="Right" Fill="{StaticResource Foreground}"/>
 
 
         </Grid>
