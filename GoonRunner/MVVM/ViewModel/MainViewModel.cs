@@ -14,7 +14,10 @@ namespace GoonRunner.MVVM.ViewModel
         public NhanVienViewModel NhanVienVM { get; set; }
         public SidebarNhanVienViewModel SidebarNhanVienVM { get; set; }
         private object _currentView;
-
+        private string _displayname;
+        public string DisplayName { get => _displayname; set { _displayname = value; OnPropertyChanged(); } }
+        private string _privilege;
+        public string Privilege { get => _privilege; set { _privilege = value; OnPropertyChanged(); } }
         public object CurrentView
         {
             get { return _currentView; }
@@ -87,7 +90,10 @@ namespace GoonRunner.MVVM.ViewModel
 
         public MainViewModel()
         {
-            
+            LogInView loginWindow = new LogInView();
+            var loginVM = loginWindow.DataContext as LoginViewModel; // Gọi LoginViewModel
+            DisplayName = loginVM.DisplayName; // Lấy UserName
+            Privilege = loginVM.Privilege; // Lấy Privilege
             HomeVM = new HomeViewModel();
             NhanVienVM = new NhanVienViewModel();
             SidebarNhanVienVM = new SidebarNhanVienViewModel();
@@ -113,11 +119,9 @@ namespace GoonRunner.MVVM.ViewModel
             SignOutCommand = new RelayCommand<Window>((p) => true, (p) =>
             {
                 p.Hide();
-                LogInView loginWindow = new LogInView();
-                var loginWM = loginWindow.DataContext as LoginViewModel;
-                loginWM.UserName = "";
-                loginWM.Password = "";
-                loginWM.ErrorMassage = "";
+                loginVM.UserName = "";
+                loginVM.Password = "";
+                loginVM.ErrorMassage = "";
                 loginWindow.Show();
             });
         }
