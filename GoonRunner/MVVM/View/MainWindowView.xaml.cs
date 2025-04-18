@@ -98,11 +98,43 @@ namespace GoonRunner.MVVM.View
             }
         }
 
-        private void DisableSidebar(object sender, RoutedEventArgs e)
+        private void DisableSidebarAndChangeTitle(object sender, RoutedEventArgs e)
         {
             Split2.Visibility = Visibility.Collapsed;
             MainGrid.ColumnDefinitions[5].Width = new GridLength(0);
             MainGrid.ColumnDefinitions[4].Width = new GridLength(0);
+            
+            this.Title = "GoonRunner - Trang chủ";
+        }
+
+        private void ChangeTitleNhanvien(object sender, RoutedEventArgs e)
+        {
+            this.Title = "GoonRunner - Nhân viên";
+        }
+
+        private void ChangeTitleDonhang(object sender, RoutedEventArgs e)
+        {
+            this.Title = "GoonRunner - Đơn hàng";
+        }
+
+        private void ChangeTitleSanpham(object sender, RoutedEventArgs e)
+        {
+            this.Title = "GoonRunner - Sản phẩm";
+        }
+
+        private void ChangeTitleKhachhang(object sender, RoutedEventArgs e)
+        {
+            this.Title = "GoonRunner - Khách Hàng";
+        }
+
+        private void ChangeTitleKhuyenmai(object sender, RoutedEventArgs e)
+        {
+            this.Title = "GoonRunner - Khuyến mại";
+        }
+
+        private void ChangeTitleBaohanh(object sender, RoutedEventArgs e)
+        {
+            this.Title = "GoonRunner - Bảo hành";
         }
     }
 }

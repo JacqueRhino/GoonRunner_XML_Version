@@ -13,7 +13,7 @@
         Height="500" Width="380"
         WindowStyle="None"
         ResizeMode="NoResize"
-        Title="GoonRunner"
+        Title="GoonRunner - Login"
         Background="Transparent"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"

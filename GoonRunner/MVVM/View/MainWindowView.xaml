@@ -9,6 +9,7 @@
         xmlns:viewmodel="clr-namespace:GoonRunner.MVVM.ViewModel" 
         d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
         DataContext="{StaticResource MainVM}"
+        Title="GoonRunner - Trang chủ"
         Name="mainWindow"
         Height="720" Width="1280" MinHeight="500" MinWidth="700" Background="{StaticResource Background}"
         Icon="/GoonRunner.ico">
@@ -142,7 +143,7 @@
                     <StackPanel Grid.Row="0">
                             <RadioButton
                                 Command="{Binding HomeViewCommand}"
-                                Click="DisableSidebar"
+                                Click="DisableSidebarAndChangeTitle"
                                 IsChecked="True">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="Home20" FontSize="28"/>
@@ -155,7 +156,8 @@
                             </RadioButton>
                         
                             <RadioButton
-                                Command="{Binding NhanVienViewCommand}">
+                                Command="{Binding NhanVienViewCommand}"
+                                Click="ChangeTitleNhanvien">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="PersonAccounts20" FontSize="28"/>
                                     <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
@@ -166,7 +168,8 @@
                                 </RadioButton.Resources>
                             </RadioButton>
                         
-                            <RadioButton>
+                            <RadioButton
+                                Click="ChangeTitleDonhang">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="ClipboardBulletListRtl20" FontSize="28"/>
                                     <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
@@ -177,7 +180,8 @@
                                 </RadioButton.Resources>
                             </RadioButton>
                         
-                            <RadioButton>
+                            <RadioButton
+                                Click="ChangeTitleSanpham">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="Box20" FontSize="28"/>
                                     <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
@@ -188,7 +192,8 @@
                                 </RadioButton.Resources>
                             </RadioButton>
                         
-                             <RadioButton>
+                             <RadioButton
+                                 Click="ChangeTitleKhachhang">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="People20" FontSize="28"/>
                                     <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
@@ -199,7 +204,8 @@
                                 </RadioButton.Resources>
                             </RadioButton>
                         
-                            <RadioButton>
+                            <RadioButton
+                                Click="ChangeTitleKhuyenmai">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="Tag20" FontSize="28"/>
                                     <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
@@ -210,7 +216,8 @@
                                 </RadioButton.Resources>
                             </RadioButton>
                         
-                            <RadioButton>
+                            <RadioButton
+                                Click="ChangeTitleBaohanh">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="Wrench20" FontSize="28"/>
                                     <TextBlock FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="18" Margin="10,0,0,0">
