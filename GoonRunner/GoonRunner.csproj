@@ -102,16 +102,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Theme\ForgotPasswordTheme.xaml" />
     <Page Include="Theme\GridSplitterTheme.xaml" />
     <Page Include="Theme\GroupBox.xaml" />
     <Page Include="Theme\MenuButtonTheme.xaml" />
     <Page Include="Theme\SidebarButtonTheme.xaml" />
     <Page Include="Theme\WindowControlButton.xaml" />
     <Page Include="Theme\NavButtonTheme.xaml" />
-    <Page Include="Theme\PasswordBoxTheme.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Theme\TextboxTheme.xaml" />
   </ItemGroup>
   <ItemGroup>
