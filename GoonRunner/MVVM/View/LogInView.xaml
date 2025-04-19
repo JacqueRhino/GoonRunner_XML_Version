@@ -6,16 +6,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:viewmodel="clr-namespace:GoonRunner.MVVM.ViewModel" 
+        xmlns:gr="clr-namespace:GoonRunner.CustomControl"
+        mc:Ignorable="d"
         d:DataContext="{d:DesignInstance Type=viewmodel:LoginViewModel}"
         DataContext="{StaticResource LoginVM}"
-        mc:Ignorable="d"
-        Name="loginWindow"
-        Height="500" Width="380"
-        WindowStyle="None"
-        ResizeMode="NoResize"
-        Title="GoonRunner - Login"
-        Background="Transparent"
-        AllowsTransparency="True"
+        Name="loginWindow" Height="500" Width="380" WindowStyle="None" ResizeMode="NoResize"
+        Title="GoonRunner - Login" Background="Transparent" AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         Icon="/GoonRunner.ico">
     <Window.Resources>
@@ -48,48 +44,21 @@
                            FontFamily="../../Assets/Fonts/#JetBrains Mono" FontWeight="Medium" FontSize="16"
                            Margin="0,0,0,20" />
                 
-                <GroupBox Style="{StaticResource GroupboxForTextbox}"
-                          Header="Username" Width="240"
-                          Margin="10">
-                    <Grid>
-                        <TextBox Margin="1"
-                                 Text="{Binding UserName}"
-                                 BorderThickness="0"
-                                 Background="Transparent"
-                                 VerticalContentAlignment="Center"
-                                 FontFamily="../../Assets/Fonts/#JetBrains Mono"
-                                 Padding="3,0,0,5"
-                                 FontWeight="Light"
-                                 Foreground="{StaticResource Foreground}"
-                                 Name="Username"
-                        />
-                        
-                        <TextBlock IsHitTestVisible="False"
-                                   Text="Nhập username"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Left"
-                                   FontFamily="../../Assets/Fonts/#JetBrains Mono"
-                                   FontWeight="Light"
-                                   Margin="5,0,0,5"
-                                   FontSize="12"
-                                   Foreground="#A89984">
-                                
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding Text, ElementName=Username}" Value="">
-                                            <Setter Property="Visibility" Value="Visible"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                    <Setter Property="Visibility" Value="Hidden"/>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
-                    </Grid>
-                </GroupBox>
+                <Grid Width="250">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <gr:Textbox SetHeader="Username" 
+                                SetPlaceholder="Nhập username" 
+                                SetBinding="{Binding UserName}"
+                                Margin="0,0,0,10"/>
                 
-                <GroupBox Style="{StaticResource GroupboxForTextbox}"
-                          Header="Password" Width="240" Margin="10">
+                
+                <GroupBox Grid.Row="1" Style="{StaticResource GroupboxForTextbox}"
+                          Header="Password"
+                          Margin="0,0,0,10">
                     <Grid>
                         <PasswordBox 
                             Margin="1"
@@ -135,14 +104,15 @@
                     </Grid>
                 </GroupBox>
                 
-                <TextBlock Name="ForgotPasswordTxt"
+                <TextBlock Grid.Row="2" Name="ForgotPasswordTxt"
                            Text="Quên mật khẩu?"
-                           Margin="0,0,7,10"
+                           Margin="0,0,10,10"
                            Style="{StaticResource ForgotPasswordStyle}">
                     <TextBlock.InputBindings>
                         <MouseBinding Command="{Binding ForgotPasswordCommand}" CommandParameter="{Binding ElementName=loginWindow}" MouseAction="LeftClick"/>
                     </TextBlock.InputBindings>
                 </TextBlock>
+                </Grid>
 
                 <Button Name="ButtonLogIn"
                         Foreground="{StaticResource Background}" Background="#076678"

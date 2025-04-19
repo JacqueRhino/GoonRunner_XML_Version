@@ -17,7 +17,7 @@
                 <ControlTemplate TargetType="{x:Type RadioButton}">
                         <Border Background="{TemplateBinding Background}" CornerRadius="8" Padding="8">
                             <StackPanel Orientation="Horizontal">
-                                <Rectangle Height="auto" Width="3" Fill="Transparent" Margin="0,0,8,0" x:Name="Rectangle"/>
+                                <Rectangle Width="3" Fill="Transparent" Margin="0,0,8,0" x:Name="Rectangle"/>
                                 <ContentPresenter VerticalAlignment="Center" />
                             </StackPanel>
                         </Border>

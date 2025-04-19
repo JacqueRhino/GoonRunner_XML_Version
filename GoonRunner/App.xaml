@@ -13,9 +13,9 @@
                 <ResourceDictionary Source="pack://application:,,,/Theme/Groupbox.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/MenuButtonTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/NavButtonTheme.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Theme/SidebarButtonTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/GridSplitterTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/PasswordBoxTheme.xaml"/>
-                <ResourceDictionary Source="pack://application:,,,/Theme/ForgotPasswordTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/ErrorMessageTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/DatePickerTheme.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/Theme/ComboBox.xaml"/>
