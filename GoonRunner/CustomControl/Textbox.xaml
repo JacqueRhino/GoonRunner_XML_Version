@@ -1,0 +1,51 @@
+<UserControl x:Class="GoonRunner.CustomControl.Textbox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:GoonRunner.CustomControl"
+             mc:Ignorable="d"
+             d:DesignHeight="100" d:DesignWidth="300">
+    <Grid>
+        <GroupBox Grid.Row="0" Style="{StaticResource GroupboxForTextbox}"
+                  x:Name="GroupBox"
+                  Header="Lastname">
+            <Grid>
+                <TextBox Margin="1"
+                         Text="{Binding UserName}"
+                         BorderThickness="0"
+                         Background="Transparent"
+                         VerticalContentAlignment="Center"
+                         FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                         Padding="3,0,0,5"
+                         FontWeight="Regular"
+                         Foreground="#3c3836"
+                         x:Name="Inputbox"
+                />
+        
+                <TextBlock IsHitTestVisible="False"
+                           Text="Nhập họ"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                           FontWeight="Light"
+                           Margin="5,0,0,5"
+                           FontSize="12"
+                           x:Name="Placeholder"
+                           Foreground="#A89984">
+        
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=Inputbox}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                            <Setter Property="Visibility" Value="Hidden"/>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

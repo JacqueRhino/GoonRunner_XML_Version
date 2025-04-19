@@ -78,6 +78,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="CustomControl\Textbox.xaml" />
     <Page Include="MVVM\View\ForgotPasswordView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,13 +102,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Theme\ForgotPasswordTheme.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Theme\GridSplitterTheme.xaml" />
     <Page Include="Theme\GroupBox.xaml" />
     <Page Include="Theme\MenuButtonTheme.xaml" />
+    <Page Include="Theme\SidebarButtonTheme.xaml" />
     <Page Include="Theme\WindowControlButton.xaml" />
     <Page Include="Theme\NavButtonTheme.xaml" />
     <Page Include="Theme\PasswordBoxTheme.xaml">
@@ -117,6 +115,10 @@
     <Page Include="Theme\TextboxTheme.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomControl\Extensions.cs" />
+    <Compile Include="CustomControl\Textbox.xaml.cs">
+      <DependentUpon>Textbox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\Model\ACCNHANVIEN.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
