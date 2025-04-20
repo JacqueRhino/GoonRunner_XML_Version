@@ -16,6 +16,10 @@ namespace GoonRunner.MVVM.View
             MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth;
 
         }
+        private void OnContentChanged(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
         private void ClosedOnClick(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
