@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Design;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
@@ -23,7 +21,7 @@ namespace GoonRunner.MVVM.View
             Application.Current.Shutdown();
         }
 
-        private void MaximizeOnClick(object sender, RoutedEventArgs e)
+        private void MaximizeAndMinimizeOnClick(object sender, RoutedEventArgs e)
         {
             WindowState = (WindowState == WindowState.Maximized ?
                 WindowState.Normal : WindowState.Maximized);                
@@ -31,12 +29,6 @@ namespace GoonRunner.MVVM.View
             MaximizeButton.Content = (WindowState == WindowState.Maximized ?
                 "" : "" );
         }
-
-        private void MinimizedOnClick(object sender, RoutedEventArgs e)
-        {
-            WindowState = WindowState.Minimized;
-        }
-
         private void DragMoving(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton != MouseButton.Left) return;
@@ -51,13 +43,6 @@ namespace GoonRunner.MVVM.View
 
             DragMove();
         }
-
-        private Point GetMousePosition(object sender, MouseButtonEventArgs e)
-        {
-            var point = e.GetPosition(this);
-            return new Point(point.X, point.Y);
-        }
-        
         private void SetMenuWidth(object sender, DragDeltaEventArgs e)
         {
             if (MainGrid.ColumnDefinitions[1].Width.Value < 205)
@@ -75,17 +60,19 @@ namespace GoonRunner.MVVM.View
             else
             {
                 Split2.Visibility = Visibility.Visible;
-                MainGrid.ColumnDefinitions[5].Width = new GridLength(250);
+                MainGrid.ColumnDefinitions[5].Width = new GridLength(280);
                 MainGrid.ColumnDefinitions[4].Width = new GridLength(10);
             }
         }
 
         private void CheckSidebarWidth(object sender, DragDeltaEventArgs e)
         {
-            if (MainGrid.ColumnDefinitions[5].Width.Value < 150)
+            if (MainGrid.ColumnDefinitions[5].Width.Value < 242)
             {
                Split2.Visibility = Visibility.Collapsed;
             }
+
+            // Displayname.Text = MainGrid.ColumnDefinitions[5].Width.Value.ToString();
 
         }
 

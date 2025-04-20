@@ -11,13 +11,14 @@ namespace GoonRunner.MVVM.ViewModel
 {
     public class ForgotPasswordViewModel : BaseViewModel
     {
-        public ICommand CloseView { get; set; }
-
+        public ICommand ReturnCommand { get; set; }
         public ForgotPasswordViewModel()
         {
-            CloseView = new RelayCommand<Window>((p) => true, (p) => 
+            ReturnCommand = new RelayCommand<Window>(p =>
             {
-
+                LogInView loginView = new LogInView();
+                loginView.Show();
+                p.Hide();
             });
         }
     }

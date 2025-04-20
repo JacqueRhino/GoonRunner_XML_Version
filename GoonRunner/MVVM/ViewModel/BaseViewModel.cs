@@ -31,6 +31,11 @@ namespace GoonRunner.MVVM.ViewModel
             _canExecute = canExecute;
             _execute = execute;
         }
+        
+        public RelayCommand(Action<T> execute)
+        {
+            _execute = execute;
+        }
 
         public bool CanExecute(object parameter)
         {

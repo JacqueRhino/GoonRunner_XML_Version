@@ -65,7 +65,7 @@
                 </Button>
                 
                <Button Grid.Row="0" Grid.Column="2" Width="auto" Height="auto"
-                       Click="MaximizeOnClick"
+                       Click="MaximizeAndMinimizeOnClick"
                        Style="{StaticResource WindowControlButton}"
                        FontFamily="../../Assets/Fonts/#Segoe Fluent Icons" FontSize="12"
                        Name="MaximizeButton"
@@ -123,6 +123,7 @@
                         
                         <StackPanel Margin="10,0,5,0">
                             <TextBlock Text="{Binding DisplayName}"
+                                       Name="Displayname"
                                        Foreground="{StaticResource Foreground}"
                                        FontSize="14"
                                        FontFamily="#JetBrains Mono"/>

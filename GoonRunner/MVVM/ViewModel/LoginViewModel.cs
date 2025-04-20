@@ -6,30 +6,29 @@ using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
 using GoonRunner.MVVM.View;
-using System.Data.Entity.Core.Objects;
-using System.Runtime.Remoting.Contexts;
-using System.Windows.Threading;
-using System.Data.SqlClient;
-using System;
 
 namespace GoonRunner.MVVM.ViewModel
 {
     class LoginViewModel : BaseViewModel
     {
+        private static string _placerholderstring = "Nhập mật khẩu";
+        
         public bool IsLogin { get; set; }
         private string _userName;
         public string UserName { get => _userName; set { _userName = value; OnPropertyChanged(); } }
 
         private string _password;
         public string Password { get => _password; set { _password = value; OnPropertyChanged(); } }
+        private string _placeholder = _placerholderstring;
+        public string Placeholder { get => _placeholder; set { _placeholder = value; OnPropertyChanged(); } }
 
         private string _errormessage;
         public string ErrorMassage { get => _errormessage; set { _errormessage = value; OnPropertyChanged(); } }
 
-        private string _privilege;
+        private string _privilege = "DEVELOPER!!!";
         public string Privilege { get => _privilege; set { _privilege = value; OnPropertyChanged(); } }
 
-        private string _displayname;
+        private string _displayname = "DEVELOPER_ONLY!!";
         public string DisplayName { get => _displayname; set { _displayname = value; OnPropertyChanged(); } }
         public ICommand LoginCommand { get; set; }
         public ICommand PasswordChangedCommand { get; set; }
@@ -39,13 +38,32 @@ namespace GoonRunner.MVVM.ViewModel
         {
             IsLogin = false;
             LoginCommand = new RelayCommand<Window>((p) => true, Login);
-            PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => true, (p) => { Password = p.Password; });
+            PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => true, (p) =>
+            {
+                Password = p.Password;
+                if (!string.IsNullOrEmpty(p.Password))
+                {
+                    Placeholder = "";
+                    return;
+                }
+
+                Placeholder = _placerholderstring;
+            });
+
             ForgotPasswordCommand = new RelayCommand<Window>((p) => true, (p) => 
             {
                 var forgotPasswordView = new ForgotPasswordView();
                 forgotPasswordView.Show();
                 p.Hide();
             });
+        }
+
+        private void LoginBYPASS(Window p)
+        {
+            IsLogin = true;
+            p.Hide();
+            MainWindowView mainwindow = new MainWindowView();
+            mainwindow.Show();
         }
         private void Login(Window p)
         {
@@ -81,7 +99,7 @@ namespace GoonRunner.MVVM.ViewModel
             if (CheckAccount())
             {
                 IsLogin = true;
-                MessageBox.Show("Đăng nhập dưới quyền " + Privilege);
+                Placeholder = _placerholderstring;
                 p.Hide();
                 MainWindowView mainwindow = new MainWindowView();
                 mainwindow.Show();
