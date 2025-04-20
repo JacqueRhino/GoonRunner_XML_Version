@@ -10,25 +10,23 @@ using GoonRunner.MVVM.View;
 namespace GoonRunner.MVVM.ViewModel
 {
     class LoginViewModel : BaseViewModel
-    {
-        private static string _placerholderstring = "Nhập mật khẩu";
-        
+    {     
         public bool IsLogin { get; set; }
         private string _userName;
         public string UserName { get => _userName; set { _userName = value; OnPropertyChanged(); } }
 
         private string _password;
         public string Password { get => _password; set { _password = value; OnPropertyChanged(); } }
-        private string _placeholder = _placerholderstring;
+        private string _placeholder;
         public string Placeholder { get => _placeholder; set { _placeholder = value; OnPropertyChanged(); } }
 
         private string _errormessage;
         public string ErrorMassage { get => _errormessage; set { _errormessage = value; OnPropertyChanged(); } }
 
-        private string _privilege = "DEVELOPER!!!";
+        private string _privilege;
         public string Privilege { get => _privilege; set { _privilege = value; OnPropertyChanged(); } }
 
-        private string _displayname = "DEVELOPER_ONLY!!";
+        private string _displayname;
         public string DisplayName { get => _displayname; set { _displayname = value; OnPropertyChanged(); } }
         public ICommand LoginCommand { get; set; }
         public ICommand PasswordChangedCommand { get; set; }
@@ -37,17 +35,17 @@ namespace GoonRunner.MVVM.ViewModel
         public LoginViewModel()
         {
             IsLogin = false;
-            LoginCommand = new RelayCommand<Window>((p) => true, Login);
+            Placeholder = "Nhập mật khẩu";
+            LoginCommand = new RelayCommand<Window>((p) => true, (p) => Login(p));
             PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => true, (p) =>
             {
-                Password = p.Password;
-                if (!string.IsNullOrEmpty(p.Password))
+                if (string.IsNullOrEmpty(p.Password))
                 {
-                    Placeholder = "";
-                    return;
+                    Placeholder = "Nhập mật khẩu";
                 }
-
-                Placeholder = _placerholderstring;
+                else
+                    Placeholder = "";
+                Password = p.Password;
             });
 
             ForgotPasswordCommand = new RelayCommand<Window>((p) => true, (p) => 
@@ -69,7 +67,6 @@ namespace GoonRunner.MVVM.ViewModel
         {
             if (p == null)
                 return;
-
             
             if (string.IsNullOrEmpty(UserName))
             {
@@ -99,10 +96,56 @@ namespace GoonRunner.MVVM.ViewModel
             if (CheckAccount())
             {
                 IsLogin = true;
-                Placeholder = _placerholderstring;
-                p.Hide();
+                Placeholder = "Nhập mật khẩu";
                 MainWindowView mainwindow = new MainWindowView();
+                var MainVM = mainwindow.DataContext as MainViewModel;
+                MainVM.DisplayName = DisplayName; // Gắn DisplayName qua bên MainWindow
+                MainVM.Privilege = Privilege; // Gắn Privilege qua bên MainWindow
+
+                // Xử lý ẩn hiện danh mục dựa vào quyền của user
+                switch (Privilege)
+                {
+                    case "Nhân viên bán hàng":
+                        mainwindow.NhanVienRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.KhuyenMaiRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.BaoHanhRadioButton.Visibility = Visibility.Collapsed;
+                        break;
+                    case "Nhân viên kế toán":
+                        mainwindow.NhanVienRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.KhachHangRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.SanPhamRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.KhuyenMaiRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.BaoHanhRadioButton.Visibility = Visibility.Collapsed;
+                        break;
+                    case "Nhân viên chăm sóc khách hàng":
+                        mainwindow.NhanVienRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.DonHangRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.KhuyenMaiRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.BaoHanhRadioButton.Visibility = Visibility.Collapsed;
+                        break;
+                    case "Nhân viên kiểm kho":
+                        mainwindow.NhanVienRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.KhachHangRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.DonHangRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.KhuyenMaiRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.BaoHanhRadioButton.Visibility = Visibility.Collapsed;
+                        break;
+                    case "Nhân viên kỹ thuật":
+                        mainwindow.NhanVienRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.KhachHangRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.SanPhamRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.DonHangRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.KhuyenMaiRadioButton.Visibility = Visibility.Collapsed;
+                        break;
+                    case "Admin":
+                        mainwindow.KhachHangRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.SanPhamRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.DonHangRadioButton.Visibility = Visibility.Collapsed;
+                        mainwindow.BaoHanhRadioButton.Visibility = Visibility.Collapsed;
+                        break;
+                }
                 mainwindow.Show();
+                p.Hide();
             }
             else
             {
