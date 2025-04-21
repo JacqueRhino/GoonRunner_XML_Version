@@ -4,19 +4,30 @@
                     xmlns:viewmodel="clr-namespace:GoonRunner.MVVM.ViewModel">
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <!-- Menu View -->
-            <DataTemplate DataType="{x:Type viewmodel:HomeViewModel}">
-                <view:HomeView/>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type viewmodel:NhanVienViewModel}">
-                <view:NhanVienView/>
-            </DataTemplate>
-    
+    <DataTemplate DataType="{x:Type viewmodel:HomeViewModel}">
+        <view:HomeView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewmodel:NhanVienViewModel}">
+        <view:NhanVienView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewmodel:SanPhamViewModel}">
+        <view:SanPhamView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewmodel:KhachHangViewModel}">
+        <view:KhachHangView/>
+    </DataTemplate>
+
     <!-- Sidebar View -->
-            <DataTemplate DataType="{x:Type viewmodel:SidebarNhanVienViewModel}">
-                <view:SidebarNhanVienView/>
-            </DataTemplate>
-    
+    <DataTemplate DataType="{x:Type viewmodel:SidebarNhanVienViewModel}">
+        <view:SidebarNhanVienView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type viewmodel:SidebarSanPhamViewModel}">
+        <view:SidebarSanPhamView/>
+    </DataTemplate>
+
     <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
     <viewmodel:NhanVienViewModel x:Key="NhanVienVM"></viewmodel:NhanVienViewModel>
+    <viewmodel:SanPhamViewModel x:Key="SanPhamVM"></viewmodel:SanPhamViewModel>
+    <viewmodel:KhachHangViewModel x:Key="KhachHangVM"></viewmodel:KhachHangViewModel>
     <viewmodel:ForgotPasswordViewModel x:Key="ForgotPassVM"></viewmodel:ForgotPasswordViewModel>
 </ResourceDictionary>

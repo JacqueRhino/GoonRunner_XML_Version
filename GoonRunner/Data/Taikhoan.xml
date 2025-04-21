@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DanhSachTaiKhoan>
+	<Taikhoan>
+		<Displayname>Đặng Quốc Phong</Displayname>
+		<Privilege>Nhân viên</Privilege>
+		<Username>PhongLong</Username>
+		<Password>12345</Password>
+	</Taikhoan>
+	<Taikhoan>
+		<Displayname>Trần Văn Bình</Displayname>
+		<Privilege>Admin</Privilege>
+		<Username>Binh</Username>
+		<Password>admin</Password>
+	</Taikhoan>
+</DanhSachTaiKhoan>

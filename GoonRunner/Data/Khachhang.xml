@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DanhSachKhachHang>
+	<Khachhang>
+		<Makh>KH001</Makh>
+		<Hotenkh>Nguyễn Văn Anh</Hotenkh>
+		<Sdt>0901234567</Sdt>
+		<Diachi>123 Nguyễn Thị Minh Khai, Phường Bến Nghé, Quận 1</Diachi>
+	</Khachhang>
+	<Khachhang>
+		<Makh>KH002</Makh>
+		<Hotenkh>Trần Minh Bảo</Hotenkh>
+		<Sdt>0912345678</Sdt>
+		<Diachi>456 Lý Tự Trọng, Phường Bến Thành, Quận 1</Diachi>
+	</Khachhang>
+	<Khachhang>
+		<Makh>KH003</Makh>
+		<Hotenkh>Lê Thị Hương</Hotenkh>
+		<Sdt>0933456789</Sdt>
+		<Diachi>789 Phạm Ngọc Thạch, Phường 6, Quận 3</Diachi>
+	</Khachhang>
+	<Khachhang>
+		<Makh>KH004</Makh>
+		<Hotenkh>Phan Văn Minh</Hotenkh>
+		<Sdt>0944567890</Sdt>
+		<Diachi>101 Hai Bà Trưng, Phường Đa Kao, Quận 1</Diachi>
+	</Khachhang>
+	<Khachhang>
+		<Makh>KH005</Makh>
+		<Hotenkh>Hoàng Thị Lan</Hotenkh>
+		<Sdt>0975678901</Sdt>
+		<Diachi>202 Nguyễn Đình Chiểu, Phường 5, Quận 3</Diachi>
+	</Khachhang>
+</DanhSachKhachHang>

@@ -6,11 +6,21 @@ using System.Windows.Input;
 using System.Windows;
 using System.Windows.Controls;
 using GoonRunner.MVVM.View;
+using System.Collections.ObjectModel;
+using System.Xml.Linq;
 
 namespace GoonRunner.MVVM.ViewModel
 {
     class LoginViewModel : BaseViewModel
-    {     
+    {
+        public class Taikhoan
+        {
+            public string Displayname { get; set; }
+            public string Privilege { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
+        }
+        public ObservableCollection<Taikhoan> taikhoans { get; set; }
         public bool IsLogin { get; set; }
         private string _userName;
         public string UserName { get => _userName; set { _userName = value; OnPropertyChanged(); } }
@@ -34,6 +44,18 @@ namespace GoonRunner.MVVM.ViewModel
 
         public LoginViewModel()
         {
+            taikhoans = new ObservableCollection<Taikhoan>();
+            XDocument doc = XDocument.Load(@"Data\Taikhoan.xml");
+            foreach (var element in doc.Descendants("Taikhoan"))
+            {
+                taikhoans.Add(new Taikhoan
+                {
+                    Displayname = element.Element("Displayname").Value,
+                    Privilege = element.Element("Privilege").Value,
+                    Username = element.Element("Username").Value,
+                    Password = element.Element("Password").Value,
+                });
+            }
             IsLogin = false;
             Placeholder = "Nhập mật khẩu";
             LoginCommand = new RelayCommand<Window>((p) => true, (p) => Login(p));
@@ -101,49 +123,6 @@ namespace GoonRunner.MVVM.ViewModel
                 var MainVM = mainwindow.DataContext as MainViewModel;
                 MainVM.DisplayName = DisplayName; // Gắn DisplayName qua bên MainWindow
                 MainVM.Privilege = Privilege; // Gắn Privilege qua bên MainWindow
-
-                // Xử lý ẩn hiện danh mục dựa vào quyền của user
-                switch (Privilege)
-                {
-                    case "Nhân viên bán hàng":
-                        mainwindow.NhanVienRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.KhuyenMaiRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.BaoHanhRadioButton.Visibility = Visibility.Collapsed;
-                        break;
-                    case "Nhân viên kế toán":
-                        mainwindow.NhanVienRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.KhachHangRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.SanPhamRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.KhuyenMaiRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.BaoHanhRadioButton.Visibility = Visibility.Collapsed;
-                        break;
-                    case "Nhân viên chăm sóc khách hàng":
-                        mainwindow.NhanVienRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.DonHangRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.KhuyenMaiRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.BaoHanhRadioButton.Visibility = Visibility.Collapsed;
-                        break;
-                    case "Nhân viên kiểm kho":
-                        mainwindow.NhanVienRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.KhachHangRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.DonHangRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.KhuyenMaiRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.BaoHanhRadioButton.Visibility = Visibility.Collapsed;
-                        break;
-                    case "Nhân viên kỹ thuật":
-                        mainwindow.NhanVienRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.KhachHangRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.SanPhamRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.DonHangRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.KhuyenMaiRadioButton.Visibility = Visibility.Collapsed;
-                        break;
-                    case "Admin":
-                        mainwindow.KhachHangRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.SanPhamRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.DonHangRadioButton.Visibility = Visibility.Collapsed;
-                        mainwindow.BaoHanhRadioButton.Visibility = Visibility.Collapsed;
-                        break;
-                }
                 mainwindow.Show();
                 p.Hide();
             }
@@ -155,18 +134,16 @@ namespace GoonRunner.MVVM.ViewModel
 
         private bool CheckAccount()
         {
-            string EncodedPass = MD5Hash(Password);
-            using (var context = new GoonRunnerEntities())
+            int accCount = taikhoans.Where(p => p.Username == UserName && p.Password == Password).Count();
+            if (accCount > 0)
             {
-                int accCount = context.ACCNHANVIENs.Count(record => record.UserName == UserName && record.Pass == EncodedPass); // Kiểm tra có tài khoản hay không
-                DisplayName = context.ACCNHANVIENs.Where(a => a.UserName == UserName && a.Pass == EncodedPass)
-                                                  .Select(a => a.DisplayName).FirstOrDefault(); // Lấy dữ liệu từ cột DisplayName bên CSDL qua
-                Privilege = context.ACCNHANVIENs.Where(record => record.UserName == UserName && record.Pass == EncodedPass)
-                                                .Select(record => record.Quyen).FirstOrDefault(); // Lấy dữ liệu từ cột Quyen bên CSDL qua
-                if (accCount > 0)
-                    return true;
-                else
-                    return false;
+                DisplayName = taikhoans.Where(p => p.Username == UserName && p.Password == Password).Select(p => p.Displayname).FirstOrDefault();
+                Privilege = taikhoans.Where(p => p.Username == UserName && p.Password == Password).Select(p => p.Privilege).FirstOrDefault();
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
         private static string MD5Hash(string input)

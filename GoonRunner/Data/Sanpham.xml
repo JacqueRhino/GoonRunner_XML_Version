@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Danhsachsanpham>
+  <Sanpham>
+    <Masp>001</Masp>
+    <Tensp>Intel Core i9-13900K</Tensp>
+    <Loaisp>CPU</Loaisp>
+    <Gia>14500000</Gia>
+    <Soluong>5</Soluong>
+    <Thoigianbaohanh>36</Thoigianbaohanh>
+    <Nhasx>Intel</Nhasx>
+  </Sanpham>
+  <Sanpham>
+    <Masp>002</Masp>
+    <Tensp>AMD Ryzen 9 7950X</Tensp>
+    <Loaisp>CPU</Loaisp>
+    <Gia>15000000</Gia>
+    <Soluong>5</Soluong>
+    <Thoigianbaohanh>36</Thoigianbaohanh>
+    <Nhasx>AMD</Nhasx>
+  </Sanpham>
+  <Sanpham>
+    <Masp>003</Masp>
+    <Tensp>Mainboard ASUS ROG Strix Z790-E</Tensp>
+    <Loaisp>Mainboard</Loaisp>
+    <Gia>9000000</Gia>
+    <Soluong>5</Soluong>
+    <Thoigianbaohanh>36</Thoigianbaohanh>
+    <Nhasx>Asus</Nhasx>
+  </Sanpham>
+  <Sanpham>
+    <Masp>004</Masp>
+    <Tensp>Mainboard MSI MAG B660M Mortar</Tensp>
+    <Loaisp>Mainboard</Loaisp>
+    <Gia>4500000</Gia>
+    <Soluong>5</Soluong>
+    <Thoigianbaohanh>24</Thoigianbaohanh>
+    <Nhasx>MSI</Nhasx>
+  </Sanpham>
+  <Sanpham>
+    <Masp>005</Masp>
+    <Tensp>RAM Corsair Vengeance 32GB DDR5</Tensp>
+    <Loaisp>RAM</Loaisp>
+    <Gia>4800000</Gia>
+    <Soluong>5</Soluong>
+    <Thoigianbaohanh>36</Thoigianbaohanh>
+    <Nhasx>Corsair</Nhasx>
+  </Sanpham>
+  <Sanpham>
+    <Masp>006</Masp>
+    <Tensp>RAM Kingston Fury 16GB DDR4</Tensp>
+    <Loaisp>RAM</Loaisp>
+    <Gia>2100000</Gia>
+    <Soluong>5</Soluong>
+    <Thoigianbaohanh>24</Thoigianbaohanh>
+    <Nhasx>Kingston</Nhasx>
+  </Sanpham>
+  <Sanpham>
+    <Masp>007</Masp>
+    <Tensp>SSD Samsung 990 Pro 2TB NVMe</Tensp>
+    <Loaisp>SSD</Loaisp>
+    <Gia>7500000</Gia>
+    <Soluong>5</Soluong>
+    <Thoigianbaohanh>36</Thoigianbaohanh>
+    <Nhasx>Samsung</Nhasx>
+  </Sanpham>
+  <Sanpham>
+    <Masp>008</Masp>
+    <Tensp>SSD WD Black SN850X 1TB NVMe</Tensp>
+    <Loaisp>SSD</Loaisp>
+    <Gia>4500000</Gia>
+    <Soluong>5</Soluong>
+    <Thoigianbaohanh>36</Thoigianbaohanh>
+    <Nhasx>Western Digital</Nhasx>
+  </Sanpham>
+  <Sanpham>
+    <Masp>009</Masp>
+    <Tensp>Card đồ họa NVIDIA RTX 4090</Tensp>
+    <Loaisp>GPU</Loaisp>
+    <Gia>50000000</Gia>
+    <Soluong>5</Soluong>
+    <Thoigianbaohanh>36</Thoigianbaohanh>
+    <Nhasx>NVIDIA</Nhasx>
+  </Sanpham>
+  <Sanpham>
+    <Masp>010</Masp>
+    <Tensp>Card đồ họa AMD Radeon RX 7900 XTX</Tensp>
+    <Loaisp>GPU</Loaisp>
+    <Gia>37000000</Gia>
+    <Soluong>5</Soluong>
+    <Thoigianbaohanh>36</Thoigianbaohanh>
+    <Nhasx>AMD</Nhasx>
+  </Sanpham>
+</Danhsachsanpham>

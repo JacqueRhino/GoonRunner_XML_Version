@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DanhSachNhanvien>
+  <Nhanvien>
+    <Manv>001</Manv>
+    <Hoten>Đặng Quốc Phong</Hoten>
+    <Phongban>Phòng kho</Phongban>
+    <Gioitinh>Nam</Gioitinh>
+    <Sdt>0980382213</Sdt>
+    <Diachi>420/69 Đường Pasteur Phường 12 Quận Cam</Diachi>
+  </Nhanvien>
+  <Nhanvien>
+    <Manv>002</Manv>
+    <Hoten>Nguyễn Thị Lan</Hoten>
+    <Phongban>Phòng kỹ thuật</Phongban>
+    <Gioitinh>Nữ</Gioitinh>
+    <Sdt>0912345678</Sdt>
+    <Diachi>420/69 Đường Pasteur Phường 12 Quận Cam</Diachi>
+  </Nhanvien>
+  <Nhanvien>
+    <Manv>003</Manv>
+    <Hoten>Trần Văn Bình</Hoten>
+    <Phongban>Phòng bán hàng</Phongban>
+    <Gioitinh>Nam</Gioitinh>
+    <Sdt>0908765432</Sdt>
+    <Diachi>420/69 Đường Pasteur Phường 12 Quận Cam</Diachi>
+  </Nhanvien>
+  <Nhanvien>
+    <Manv>004</Manv>
+    <Hoten>Phạm Minh Hòa</Hoten>
+    <Phongban>Phòng bán hàng</Phongban>
+    <Gioitinh>Nam</Gioitinh>
+    <Sdt>0976543210</Sdt>
+    <Diachi>420/69 Đường Pasteur Phường 12 Quận Cam</Diachi>
+  </Nhanvien>
+  <Nhanvien>
+    <Manv>005</Manv>
+    <Hoten>Lê Thị Hiền</Hoten>
+    <Phongban>Phòng marketing</Phongban>
+    <Gioitinh>Nữ</Gioitinh>
+    <Sdt>0965123456</Sdt>
+    <Diachi>420/69 Đường Pasteur Phường 12 Quận Cam</Diachi>
+  </Nhanvien>
+  <Nhanvien>
+    <Manv>006</Manv>
+    <Hoten>Hoàng Văn Nam</Hoten>
+    <Phongban>Phòng bán hàng</Phongban>
+    <Gioitinh>Nam</Gioitinh>
+    <Sdt>0934678921</Sdt>
+    <Diachi>420/69 Đường Pasteur Phường 12 Quận Cam</Diachi>
+  </Nhanvien>
+  <Nhanvien>
+    <Manv>007</Manv>
+    <Hoten>Đỗ Thị Hồng</Hoten>
+    <Phongban>Phòng chăm sóc khách hàng</Phongban>
+    <Gioitinh>Nữ</Gioitinh>
+    <Sdt>0923456789</Sdt>
+    <Diachi>420/69 Đường Pasteur Phường 12 Quận Cam</Diachi>
+  </Nhanvien>
+  <Nhanvien>
+    <Manv>008</Manv>
+    <Hoten>Bùi Thanh Tùng</Hoten>
+    <Phongban>Phòng bảo hành</Phongban>
+    <Gioitinh>Nam</Gioitinh>
+    <Sdt>0945678901</Sdt>
+    <Diachi>420/69 Đường Pasteur Phường 12 Quận Cam</Diachi>
+  </Nhanvien>
+  <Nhanvien>
+    <Manv>009</Manv>
+    <Hoten>Ngô Minh Châu</Hoten>
+    <Phongban>Phòng kế toán</Phongban>
+    <Gioitinh>Nữ</Gioitinh>
+    <Sdt>0956789012</Sdt>
+    <Diachi>420/69 Đường Pasteur Phường 12 Quận Cam</Diachi>
+  </Nhanvien>
+  <Nhanvien>
+    <Manv>010</Manv>
+    <Hoten>Vũ Thị Mai</Hoten>
+    <Phongban>Phòng tạp vụ</Phongban>
+    <Gioitinh>Nữ</Gioitinh>
+    <Sdt>0912340987</Sdt>
+    <Diachi>420/69 Đường Pasteur Phường 12 Quận Cam</Diachi>
+  </Nhanvien>
+</DanhSachNhanvien>

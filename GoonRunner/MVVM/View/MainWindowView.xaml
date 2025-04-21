@@ -184,6 +184,7 @@
                             </RadioButton>
                         
                             <RadioButton Name="SanPhamRadioButton"
+                                Command="{Binding SanPhamViewCommand}"
                                 Click="ChangeTitleSanpham">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="Box20" FontSize="28"/>
@@ -196,6 +197,7 @@
                             </RadioButton>
                         
                              <RadioButton Name="KhachHangRadioButton"
+                                 Command="{Binding KhachHangViewCommand}"
                                  Click="ChangeTitleKhachhang">
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <ui:SymbolIcon Symbol="People20" FontSize="28"/>

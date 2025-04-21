@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Account>
+  <User MaNV="NV001">
+    <Username>QuocPhong</Username>
+    <Password>12345</Password>
+  </User>
+  <User MaNV="NV002">
+    <Username>ThiLan</Username>
+    <Password>12345</Password>
+  </User>
+  <User MaNV="NV003">
+    <Username>VanBinh</Username>
+    <Password>12345</Password>
+  </User>
+  <User MaNV="NV004">
+    <Username>MinhHoa</Username>
+    <Password>12345</Password>
+  </User>
+  <User MaNV="NV005">
+    <Username>ThiHien</Username>
+    <Password>12345</Password>
+  </User>
+  <User MaNV="NV006">
+    <Username>VanNam</Username>
+    <Password>12345</Password>
+  </User>
+  <User MaNV="NV007">
+    <Username>ThiHong</Username>
+    <Password>12345</Password>
+  </User>
+  <User MaNV="NV008">
+    <Username>ThanhTung</Username>
+    <Password>12345</Password>
+  </User>
+  <User MaNV="NV009">
+    <Username>MinhChau</Username>
+    <Password>12345</Password>
+  </User>
+  <User MaNV="NV010">
+    <Username>ThiMai</Username>
+    <Password>12345</Password>
+  </User>
+</Account>

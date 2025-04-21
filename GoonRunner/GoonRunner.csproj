@@ -59,6 +59,7 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -84,13 +85,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MVVM\View\HomeView.xaml" />
+    <Page Include="MVVM\View\KhachHangView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\LogInView.xaml" />
     <Page Include="MVVM\View\MainWindowView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="MVVM\View\NhanVienView.xaml" />
+    <Page Include="MVVM\View\SanPhamView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\SidebarKhachHangView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MVVM\View\SidebarNhanVienView.xaml" />
+    <Page Include="MVVM\View\SidebarSanPhamView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\MainResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -186,15 +200,22 @@
     <Compile Include="MVVM\ViewModel\BaseViewModel.cs" />
     <Compile Include="MVVM\ViewModel\ForgotPasswordViewModel.cs" />
     <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\KhachHangViewModel.cs" />
     <Compile Include="MVVM\ViewModel\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
     <Compile Include="MVVM\ViewModel\NhanVienViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\SanPhamViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\SidebarKhachHangViewModel.cs" />
     <Compile Include="MVVM\ViewModel\SidebarNhanVienViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\SidebarSanPhamViewModel.cs" />
     <Compile Include="MVVM\View\ForgotPasswordView.xaml.cs">
       <DependentUpon>ForgotPasswordView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\KhachHangView.xaml.cs">
+      <DependentUpon>KhachHangView.xaml</DependentUpon>
     </Compile>
     <Compile Include="MVVM\View\LogInView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
@@ -206,8 +227,17 @@
     <Compile Include="MVVM\View\NhanVienView.xaml.cs">
       <DependentUpon>NhanVienView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\View\SanPhamView.xaml.cs">
+      <DependentUpon>SanPhamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\SidebarKhachHangView.xaml.cs">
+      <DependentUpon>SidebarKhachHangView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\View\SidebarNhanVienView.xaml.cs">
       <DependentUpon>SidebarNhanVienView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\SidebarSanPhamView.xaml.cs">
+      <DependentUpon>SidebarSanPhamView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -336,6 +366,12 @@
     <Content Include="Assets\Fonts\Segoe Fluent Icons.ttf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Data\Account.xml" />
+    <Resource Include="Data\Donhang.xml" />
+    <Resource Include="Data\Khachhang.xml" />
+    <Resource Include="Data\Nhanvien.xml" />
+    <Resource Include="Data\Sanpham.xml" />
+    <Resource Include="Data\Taikhoan.xml" />
     <Content Include="MVVM\Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

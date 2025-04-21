@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="GoonRunner.MVVM.View.SanPhamView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewmodel="clr-namespace:GoonRunner.MVVM.ViewModel"
+             d:DataContext="{d:DesignInstance Type=viewmodel:SanPhamViewModel}"
+             DataContext="{StaticResource SanPhamVM}"
+             mc:Ignorable="d"
+            Height="593" Width="1000"
+            MinHeight="500" MinWidth="700">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="Foreground" Color="#3c3836"/>
+        <SolidColorBrush x:Key="Foreground2" Color="#A89984"/>
+        <SolidColorBrush x:Key="Background" Color="#fbf1c7"/>
+        <SolidColorBrush x:Key="Orange" Color="#D65D0E"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="1" FontSize="24"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Foreground="#7C6F64" 
+                       FontFamily="../../Assets/Fonts/#JetBrains Mono"
+                       FontWeight="Medium" >
+                        Tất Cả Sản Phẩm
+            </TextBlock>
+            <StackPanel Grid.Column="2" Margin="0,0,20,0"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Button Style="{StaticResource NavButton}" >
+                    <Border CornerRadius="5" Background="#427B55" Padding="5">
+                        <ui:SymbolIcon Symbol="ArrowCircleLeft20" Foreground="{StaticResource Background}" FontSize="24"/>
+                    </Border>
+                </Button>
+                <Button Style="{StaticResource NavButton}">
+                    <Border CornerRadius="5" Background="#427B55" Padding="5">
+                        <ui:SymbolIcon Symbol="ArrowSortDownLines20" Foreground="{StaticResource Background}" FontSize="24"/>
+                    </Border>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <DataGrid Grid.Row="1" 
+                  ItemsSource="{Binding Path=sanphams}"
+                  AutoGenerateColumns="False"
+                  IsHitTestVisible="True"
+                  Background="Transparent">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã SP" Binding="{Binding Path=Masp}"/>
+                <DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding Path=Tensp}"/>
+                <DataGridTextColumn Header="Loại sản phẩm" Binding="{Binding Path=Loaisp}"/>
+                <DataGridTextColumn Header="Giá" Binding="{Binding Path=Gia}"/>
+                <DataGridTextColumn Header="Thời gian bảo hành" Binding="{Binding Path=Thoigianbaohanh}"/>
+                <DataGridTextColumn Header="Nhà sản xuất" Binding="{Binding Path=Nhasx}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -9,10 +9,15 @@ namespace GoonRunner.MVVM.ViewModel
     {
         public ICommand HomeViewCommand { get; set; }
         public ICommand NhanVienViewCommand { get; set; }
+        public ICommand SanPhamViewCommand { get; set; }
+        public ICommand KhachHangViewCommand { get; set; }
         public ICommand SignOutCommand { get; set; }
         public HomeViewModel HomeVM { get; set; }
         public NhanVienViewModel NhanVienVM { get; set; }
+        public SanPhamViewModel SanPhamVM { get; set; }
+        public KhachHangViewModel KhachHangVM { get; set; }
         public SidebarNhanVienViewModel SidebarNhanVienVM { get; set; }
+        public SidebarSanPhamViewModel SidebarSanPhamVM { get; set; }
         private object _currentView;
         private string _displayname;
         public string DisplayName { get => _displayname; set { _displayname = value; OnPropertyChanged(); } }
@@ -96,6 +101,9 @@ namespace GoonRunner.MVVM.ViewModel
             Privilege = loginVM.Privilege; // Lấy Privilege
             HomeVM = new HomeViewModel();
             NhanVienVM = new NhanVienViewModel();
+            SanPhamVM = new SanPhamViewModel();
+            KhachHangVM = new KhachHangViewModel();
+            SidebarSanPhamVM = new SidebarSanPhamViewModel();
             SidebarNhanVienVM = new SidebarNhanVienViewModel();
             CurrentView = HomeVM;
             // DisableSidebar();
@@ -112,6 +120,20 @@ namespace GoonRunner.MVVM.ViewModel
             {
                 CurrentView = NhanVienVM;
                 CurrentSidebarView = SidebarNhanVienVM;
+                EnableSidebar();
+            });
+
+            SanPhamViewCommand = new Wpf.Ui.Input.RelayCommand<RadioButton>(o =>
+            {
+                CurrentView = SanPhamVM;
+                CurrentSidebarView = SidebarSanPhamVM;
+                EnableSidebar();
+            });
+
+            KhachHangViewCommand = new Wpf.Ui.Input.RelayCommand<RadioButton>(o =>
+            {
+                CurrentView = KhachHangVM;
+                CurrentSidebarView = SidebarSanPhamVM;
                 EnableSidebar();
             });
 
